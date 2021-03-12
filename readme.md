@@ -1,4 +1,4 @@
-# RPL: Desain dan Implementasi
+# RPL : Desain dan Implementasi
 
 Repository RPL: Desain dan Implementasi IF-42-10
 BeMO (Beli Mobil Online)
