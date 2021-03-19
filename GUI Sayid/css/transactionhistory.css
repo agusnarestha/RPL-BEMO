@@ -1,0 +1,27 @@
+.transaction-history {
+    margin-top: 120px;
+}
+
+.transaction-history .profile {
+    float: left;
+    margin-left: 100px;
+}
+
+.transaction-history .profile h3 {
+    text-align: center;
+}
+
+.transaction-history .transaction {
+    float: right;
+    width: 1300px;
+    margin-right: 100px;
+}
+
+thead {
+    background-color: #e7ab3c;
+}
+
+th {
+    font-weight: 700;
+    font-size: 16px;
+}

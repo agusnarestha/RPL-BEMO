@@ -1,0 +1,74 @@
+html,
+body {
+	height: 100%;
+    font-family: 'Actor', sans-serif;  
+}
+
+.header-top {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.header-top .ht-left {
+    float: left;
+    margin-left: 20px;
+    margin-right: auto;
+    padding-right: 10px;
+}
+
+.header-top .ht-left .logo {
+    float: left;
+    border-right: 1px solid #E5E5E5;
+    padding-top:15px ;
+    padding-bottom: 15px;
+    padding-right: 20px;
+}
+
+.header-top .ht-left .logo a img {
+    width: 120px;
+}
+
+.header-top .ht-right {
+    float: right;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.header-top .ht-right .login {
+    font-size: 16px;
+    color: black;
+    float: right;
+    padding-left: 20px;
+	border-left: 1px solid #E5E5E5;
+	padding-top: 18px;
+	padding-bottom: 15px;
+}
+
+.header-top .ht-mid {
+    margin: 15px auto;
+}
+
+.header-top .ht-mid .advanced-search {
+    height: 0px;
+    border: 1px solid #ebebeb;
+    display: flex;
+}
+
+.header-top .ht-mid .advanced-search input {
+	width: 300px;
+	height: 30px;
+	font-size: 16px;
+	color: #d1d1d1;
+    padding-left: 5px;
+}
+
+.header-top .ht-mid .advanced-search button {
+    width: 30px;
+    height: 30px;
+	font-size: 16px;
+	color: #ffffff;
+	border: 2px solid #e7ab3c;
+	background: #e7ab3c;
+}

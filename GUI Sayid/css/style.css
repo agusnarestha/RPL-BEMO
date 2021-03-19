@@ -1,0 +1,168 @@
+html,
+body {
+	height: 100%;
+    font-family: 'Actor', sans-serif;  
+}
+
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.header-top {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.header-top .ht-left {
+    float: left;
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+.header-top .ht-left .mail {
+    font-size: 16px;
+    color: black;
+    float: left;
+    border-right: 1px solid #E5E5E5;
+    padding-top:15px ;
+    padding-bottom: 15px;
+    padding-right: 20px;
+}
+
+.header-top .ht-left .mail i {
+	margin-right: 5px;
+}
+
+.header-top .ht-right {
+    float: right;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.header-top .ht-right .login {
+    font-size: 16px;
+    color: black;
+    float: right;
+    padding-left: 20px;
+	border-left: 1px solid #E5E5E5;
+	padding-top: 18px;
+	padding-bottom: 15px;
+}
+
+.header-top .ht-right .login i {
+    margin-right: 8px;
+}
+
+.header-top .ht-right .social-media {
+    color: black;
+    float: right;
+    padding-left: 10px;
+	border-left: 1px solid #E5E5E5;
+	padding-top: 18px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+}
+
+.header-top .ht-right .social-media a {
+    padding-left: 10px;
+}
+
+.inner-header {
+    padding: 40px 0;
+}
+
+.inner-header .logo {
+    padding: 1px 20px;
+}
+
+.inner-header .advanced-search {
+    height: 50px;
+    border: 1px solid #ebebeb;
+}
+
+.inner-header .advanced-search .category-btn {
+	max-width: 30%;
+	float: left;
+	background: transparent;
+	border: none;
+	padding-left: 23px;
+	padding-top: 11px;
+	padding-bottom: 13px;
+	padding-right: 60px;
+	font-size: 16px;
+	color: #252525;
+	position: relative;
+}
+
+.inner-header .advanced-search .input-group {
+	max-width: 82%;
+	height: 100%;
+}
+
+.inner-header .advanced-search .input-group input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 16px;
+	color: #d1d1d1;
+	padding-left: 20px;
+}
+
+.inner-header .advanced-search .input-group button {
+	font-size: 16px;
+	color: #ffffff;
+	position: absolute;
+	right: -3px;
+	top: -1px;
+	border: 1px solid #e7ab3c;
+	background: #e7ab3c;
+	padding: 12px 16px 12px;
+	cursor: pointer;
+}
+
+.inner-header .nav-right {
+    padding: 10px 0;
+    padding-right: 300px;
+}
+
+.inner-header .nav-right li {
+	list-style: none;
+	display: inline-block;
+	font-size: 24px;
+    padding-left: 20px;
+}
+
+.header-navbar {
+    background: #252525;
+    margin: 0px 0;
+}
+
+.header-navbar .navbar {
+    position: relative;
+}
+
+.header-navbar .navbar ul {
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.header-navbar .navbar li {
+    list-style: none;
+	display: inline-flex;
+    position: relative;
+    background-position: center;
+}
+
+.header-navbar .navbar li a {
+    font-size: 16px;
+	font-weight: 700;
+	color: #ffffff;
+    border-right: 2px solid #3b3b3b;
+    text-transform: uppercase;
+    text-align: justify;
+    padding: 0 80px;
+}

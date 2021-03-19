@@ -1,0 +1,53 @@
+a:link {
+    color: black;
+    background: transparent;
+}
+
+h2 {
+    font-weight: 700;
+}
+
+.car-section {
+    margin-top: 150px;
+}
+
+.car-section .car-row {
+    list-style: none;
+    display: inline-flex;
+}
+
+.car-section .car-row .car-category {
+    list-style: none;
+}
+
+.car-section .car-row .row {
+    margin-left: 150px;
+}
+
+.car-section .car-row .car-category .category ul li{
+    list-style: none;
+    padding-bottom: 20px;
+}
+
+.car-section .car-row .car-category .brand ul li{
+    list-style: none;
+    padding-bottom: 20px;
+}
+
+.car-section .car-row .row ul li {
+    list-style: none;
+	display: inline-flex;
+    position: relative;
+    background-position: center;
+}
+
+.car-section .car-row .row ul li img {
+    width: 250px;
+    height: 250px;
+}
+
+.car-section .car-row .row ul li a {
+    text-align: left;
+    padding-right: 70px;
+    color: black;
+}

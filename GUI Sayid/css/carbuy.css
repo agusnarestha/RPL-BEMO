@@ -1,0 +1,37 @@
+.car-buy {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 120px;
+}
+
+p {
+    font-weight: 700;
+}
+
+.input-text {
+    border-radius: 5px;
+    border: #E5E5E5 solid 2px;
+    height: 50%;
+    width: 100%;
+}
+
+.car-buy .buyer-desc .row5 .buy-button {
+    width: 170px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 20px;
+	color: #ffffff;
+	border: 2px solid #e7ab3c;
+	background: #e7ab3c;
+}
+
+.car-buy .car-desc h3 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.car-buy .car-desc h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #e7ab3c;
+}

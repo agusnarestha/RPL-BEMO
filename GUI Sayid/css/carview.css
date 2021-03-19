@@ -1,0 +1,43 @@
+.car-view {
+    margin-top: 120px;
+}
+
+.car-view .car-container {
+    display: flex;
+    justify-content: center;
+}
+
+.car-view .car-container .car-image {
+    padding-right: 40px;
+}
+
+.car-view .car-container .car-desc {
+    padding-left: 40px;
+}
+
+.car-view .car-container .car-desc .button .call-us button {
+    width: 400px;
+    height: 48px;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 40px;
+	color: #ffffff;
+	border: 2px solid #e7ab3c;
+	background: #e7ab3c;
+}
+
+.car-view .car-container .car-desc .button .buy button {
+    width: 400px;
+    height: 48px;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 40px;
+	color: black;
+	border: 2px solid #e7ab3c;
+	background: #ffffff;
+}
+
+.car-view .car-container .car-image .small ul li {
+    display: inline;
+}
+
