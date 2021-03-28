@@ -11,3 +11,4 @@ class Detail_mobil extends BaseController
 		echo view('footer');
 	}
 }
+#
