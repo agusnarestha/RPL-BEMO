@@ -51,7 +51,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <a class="navbar-brand" href="<?php echo base_url('Home/index') ?>"><img src=<?= base_url('image/Bemo.png') ?> alt="" style="width: 25%;"></a>
+          <a class="navbar-brand" href="<?php echo base_url('Main/index') ?>"><img src=<?= base_url('image/Bemo.png') ?> alt="" style="width: 25%;"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
