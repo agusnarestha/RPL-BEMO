@@ -5,8 +5,7 @@
                 <div class="card" style="background-color:rgba(0, 0, 0, 0); border: none;">
                     <h1 class="text-uppercase fw-bold" style="color: #FFF; font-size: 60px;">Ayo</h1>
                     <h1 class="text-uppercase fw-bold" style="color: #F4E04D; font-size: 72px;">Beli Mobil</h1>
-                    <p style="color: white;">Pakai Masker, Cuci Tangan Pakai Sabun, Jaga Jarak dan Hindari Kerumunan.
-                        Selalu Jaga Kesehatan, Jangan Sampai Tertular dan Jaga Keluarga Kita.</p>
+                    <p style="color: white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </div>
             <div class="col-md-6">
@@ -35,17 +34,43 @@
 <section class="rekomendasi-mobil" style="margin: 100px 0; padding: 20px 0;">
     <div class="container">
         <div class="row justify-content-center">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="card" style="width: 18rem;">
-                            <img src="#" class="card-img-top" alt="#">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="#" class="card-img-top" alt="#">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="#" class="card-img-top" alt="#">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="#" class="card-img-top" alt="#">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="#" class="card-img-top" alt="#">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
@@ -54,7 +79,7 @@
 </section>
 
 <section class="gejala" style="margin: 100px 0; padding: 20px 0;">
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
             <h3 class="fw-bold">Gejala Infeksi Coronavirus</h3>
             <h5 style="padding-bottom: 60px;">Berikut beberapa gejala virus corona yang terbilang ringan: </h5>
@@ -97,5 +122,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </section>
