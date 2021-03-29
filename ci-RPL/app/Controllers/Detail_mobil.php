@@ -6,9 +6,9 @@ class Detail_mobil extends BaseController
 {
 	public function detail_mobil()
 	{
-		echo view('header');
+		echo view('layout/header');
 		echo view('detail_mobil');
-		echo view('footer');
+		echo view('layout/footer');
 	}
 }
 #
