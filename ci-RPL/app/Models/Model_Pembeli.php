@@ -16,4 +16,6 @@ class Model_Pembeli extends Model
     protected $table = 'user';
 
     protected $allowedFields = ['no_ktp','username','password','email','no_hp','nama','jenis_kelamin','alamat'];
+
+    
 }

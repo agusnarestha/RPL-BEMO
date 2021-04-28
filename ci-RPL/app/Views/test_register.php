@@ -41,8 +41,8 @@
                 <div class="input-group mb-3">
                     <select class="form-select" aria-label="Default select example" name="jenis_kelamin">
                         <option selected>Kelamin</option>
-                        <option value="1">Laki - Laki</option>
-                        <option value="2">Perempuan</option>
+                        <option value="Laki-Laki">Laki - Laki</option>
+                        <option value="Perempuan">Perempuan</option>
                     </select>
                 </div>
                 <span>Alamat</span>

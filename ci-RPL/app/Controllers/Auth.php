@@ -14,11 +14,19 @@ class Auth extends Controller
         echo view('test_register', $data);
         echo view('layout/footer');
     }
- 
+
+    public function Main()
+	{
+		echo view('layout/header');
+		echo view('login');
+		echo view('homepage');
+		echo view('layout/footer');
+	}
+
     public function save()
     {
         //include helper form
-        // helper(['form']);
+        helper(['form']);
         //set rules validation form
         $rules = [
             'nama'          => 'required|min_length[3]|max_length[20]',
@@ -33,18 +41,18 @@ class Auth extends Controller
         if($this->validate($rules)){
             $model = new Model_Pembeli();
             $data = [
-                'no_ktp'     => $this->request->getVar('no_ktp'),
-                'username'    => $this->request->getVar('username'),
-                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
-                'email'    => $this->request->getVar('email'),
-                'no_hp'    => $this->request->getVar('no_hp'),
-                'nama'    => $this->request->getVar('nama'),
-                'jenis_kelamin'    => $this->request->getVar('jenis_kelamin'),
-                'alamat'    => $this->request->getVar('alamat'),
+                'no_ktp'        => $this->request->getVar('no_ktp'),
+                'username'      => $this->request->getVar('username'),
+                'password'      => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+                'email'         => $this->request->getVar('email'),
+                'no_hp'         => $this->request->getVar('no_hp'),
+                'nama'          => $this->request->getVar('nama'),
+                'jenis_kelamin' => $this->request->getVar('jenis_kelamin'),
+                'alamat'        => $this->request->getVar('alamat'),
 
             ];
             $model->save($data);
-            return redirect()->to('/homepage');
+            return redirect()->to('Main');
         }else{
             $data['validation'] = $this->validator;
             echo view('layout/header');
