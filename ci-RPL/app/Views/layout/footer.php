@@ -48,5 +48,15 @@
         </div>
     </div>
 </footer>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#display').DataTable({
+            fixedHeader: {
+                header: true,
+                footer: true
+            }
+        });
+    });
+</script>
 </body>
 <html>

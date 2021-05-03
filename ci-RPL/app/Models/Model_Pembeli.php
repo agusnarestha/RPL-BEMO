@@ -14,8 +14,16 @@ class Model_Pembeli extends Model
     // }
 
     protected $table = 'user';
-
-    protected $allowedFields = ['no_ktp','username','password','email','no_hp','nama','jenis_kelamin','alamat'];
-
+    protected $allowedFields = ['no_ktp','username','password','email','no_hp','nama','jenis_kelamin','alamat','status'];
     
+
+    public function showUser()
+    {
+        return $this->db->table($this->table)->get()->getResultArray();
+    }
+
+    public function deleteUser($primarykey)
+    {
+        return $this->db->table($this->table)->delete(['no_ktp' => $primarykey]);
+    }
 }

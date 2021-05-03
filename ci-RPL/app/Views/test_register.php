@@ -45,6 +45,14 @@
                         <option value="Perempuan">Perempuan</option>
                     </select>
                 </div>
+                <span>Register sebagai</span>
+                <div class="input-group mb-3">
+                    <select class="form-select" aria-label="Default select example" name="status">
+                        <option selected>Register sebagai</option>
+                        <option value="Pembeli">Pembeli</option>
+                        <option value="Penjual">Penjual</option>
+                    </select>
+                </div>
                 <span>Alamat</span>
                 <div class="input-group mb-3">
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="alamat"></textarea>

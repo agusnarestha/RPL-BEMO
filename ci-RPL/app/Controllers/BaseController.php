@@ -21,6 +21,13 @@ use Psr\Log\LoggerInterface;
 class BaseController extends Controller
 {
 	/**
+     * Instance of the main Request object.
+     *
+     * @var HTTP\IncomingRequest
+     */
+
+    protected $request;
+	/**
 	 * An array of helpers to be loaded automatically upon
 	 * class instantiation. These helpers will be available
 	 * to all other controllers that extend BaseController.
