@@ -35,42 +35,42 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-3">
-                <div class="card" style="width: 18rem;">
-                    <img src=<?= base_url('image/list.jpg') ?> class="card-img-top" alt="#">
+                <div class="card" style="width: 18rem ;">
+                    <img src=<?= base_url('image/list.jpg') ?> class="card-img-top" alt="#" style="width:75%">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Toyota New Avanza</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a class="btn btn-primary" href="<?php echo base_url('Detail_mobil/detail_mobil'); ?>">Cek Detail</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card" style="width: 18rem;">
-                    <img src=<?= base_url('image/list.jpg') ?> class="card-img-top" alt="#">
+                    <img src=<?= base_url('image/hrv.png') ?> class="card-img-top" alt="#">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Honda New HRV</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn btn-primary">Cek Detail</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card" style="width: 18rem;">
-                    <img src= <?= base_url('image/list.jpg') ?> class="card-img-top" alt="#">
+                    <img src= <?= base_url('image/civic.png') ?> class="card-img-top" alt="#" style="width:80%">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Honda New Civic</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn btn-primary">Cek Detail</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card" style="width: 18rem;">
-                    <img src=<?= base_url('image/list.jpg') ?> class="card-img-top" alt="#">
+                    <img src=<?= base_url('image/jazz_2.png') ?> class="card-img-top" alt="#">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Honda New Jazz Blue</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn btn-primary">Cek Detail</a>
                     </div>
                 </div>
             </div>

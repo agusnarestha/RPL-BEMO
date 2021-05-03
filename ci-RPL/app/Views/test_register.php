@@ -1,7 +1,10 @@
 <section class="register" style="margin-top: 150px;">
     <div class="container">
         <div class="row">
-        <form action="/user/save" method="post">
+        <?php if(isset($validation)):?>
+                    <div class="alert alert-danger"><?= $validation->listErrors() ?></div>
+        <?php endif;?>
+        <form action="/Auth/save" method="post">
             <div class="col-md-6">
                 <span>Nama</span>
                 <div class="row g-3 mb-3">
@@ -38,17 +41,25 @@
                 <div class="input-group mb-3">
                     <select class="form-select" aria-label="Default select example" name="jenis_kelamin">
                         <option selected>Kelamin</option>
-                        <option value="1">Laki - Laki</option>
-                        <option value="2">Perempuan</option>
+                        <option value="Laki-Laki">Laki - Laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                </div>
+                <span>Register sebagai</span>
+                <div class="input-group mb-3">
+                    <select class="form-select" aria-label="Default select example" name="status">
+                        <option selected>Register sebagai</option>
+                        <option value="Pembeli">Pembeli</option>
+                        <option value="Penjual">Penjual</option>
                     </select>
                 </div>
                 <span>Alamat</span>
                 <div class="input-group mb-3">
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="alamat"></textarea>
                 </div>
+                <button type="submit" class="btn btn-primary">Register</button>
             </div>
             <div class="col-md-6">
-
             </div>
         </div>
     </div>

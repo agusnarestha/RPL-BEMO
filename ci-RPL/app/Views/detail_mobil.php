@@ -3,8 +3,29 @@
         <div class="row">
             <div class="col-md-9">
                 <section class="foto_mobil">
-                    <div class="row justify-content-center">
+                    <!-- <div class="row justify-content-center">
                         <img src=<?= base_url('image/list.jpg') ?> alt="" style="width: 60%;">
+                    </div> -->
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <img src="<?= base_url('image/avanza1.png') ?>" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="<?= base_url('image/avanza2.png') ?>" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="<?= base_url('image/avanza3.png') ?>" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                     </div>
                 </section>
                 <section class="deskripsi_mobil mt-5 mb-5">
@@ -22,7 +43,7 @@
                                 </svg>
                             </div>
                             <div class="col">
-                                <p>Dealer</p>
+                                <p>Dealer - Auto 2000</p>
                             </div>
                         </div>
                         <div class="row">
@@ -33,7 +54,7 @@
                                 </svg>
                             </div>
                             <div class="col">
-                                <p>Lokasi</p>
+                                <p>Lokasi - Jakarta</p>
                             </div>
                         </div>
                         <div class="row">
@@ -59,7 +80,17 @@
                                 </svg>
                             </div>
                             <div class="col">
-                                <p>Tipe Mobil</p>
+                                <p>Harga - Rp.200.000.000</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                                </svg>
+                            </div>
+                            <div class="col">
+                                <p>Tipe Mobil - MPV</p>
                             </div>
                         </div>
                         <div class="row">
@@ -70,7 +101,7 @@
                                 </svg>
                             </div>
                             <div class="col">
-                                <p>Merek</p>
+                                <p>Merek - Toyota</p>
                             </div>
                         </div>
                         <div class="row">
@@ -81,7 +112,7 @@
                                 </svg>
                             </div>
                             <div class="col">
-                                <p>Model</p>
+                                <p>Model - Avanza</p>
                             </div>
                             <div class="row">
                                 <div class="col-md-1">
@@ -91,8 +122,12 @@
                                     </svg>
                                 </div>
                                 <div class="col">
-                                    <p>Tahun</p>
+                                    <p>Tahun - 2021</p>
                                 </div>
+                                <div class="mt-3">
+                                    <button type="button" class="btn btn-danger">Beli Sekarang</button>
+                                </div>
+                                
                     </section>
             </div>
 </section>
