@@ -1,29 +1,29 @@
-<?php namespace App\Models;
+<?php
+
+namespace App\Models;
 
 use CodeIgniter\Model;
 
 class Model_Pembeli extends Model
 {
 
-    // public function getPembeli()
-    // {
-    //     #Menampilkan Tabel Pembeli
-    //     return $this->db->table('pembeli')
-    //     ->join('user','pembeli.id_pembeli=user.id_pembeli')
-    //     ->get()->getResultArray();
-    // }
-
-    protected $table = 'user';
-    protected $allowedFields = ['no_ktp','username','password','email','no_hp','nama','jenis_kelamin','alamat','status'];
-    
-
-    public function showUser()
+    public function getPembeli()
     {
-        return $this->db->table($this->table)->get()->getResultArray();
+        return $this->db->table('user')
+            ->join('pembeli', 'pembeli.no_ktp=user.no_ktp')
+            ->get()->getResultArray();
     }
 
-    public function deleteUser($primarykey)
+    public function getRowPembeli($no_ktp)
     {
-        return $this->db->table($this->table)->delete(['no_ktp' => $primarykey]);
+        $query = $this->db->query("SELECT * FROM user WHERE no_ktp='$no_ktp'");
+        return $query->getRow();
+    }
+
+    public function addPembeli($data)
+    {
+        $this->db->table('user')->insert($data);
+        $no_ktp = $data['no_ktp'];
+        $this->db->query("INSERT INTO pembeli (id_pembeli, no_ktp) VALUES (NULL, '$no_ktp')");
     }
 }

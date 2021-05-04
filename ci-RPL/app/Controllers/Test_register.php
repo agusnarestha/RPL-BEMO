@@ -2,24 +2,36 @@
 
 namespace App\Controllers;
 
-use App\Models\test_register_model;
+use App\Models\Model_Pembeli;
 
 class Test_register extends BaseController
 {
-    public function test_register()
+    public function index()
     {
         echo view('layout/header');
         echo view('test_register');
         echo view('layout/footer');
     }
-    public function save()
+    public function register()
     {
-        $model = new test_register_model();
-        $data = array(
-            'customer_firstname'  => $this->request->getPost('customer_firstname'),
-            'customer_lastname' => $this->request->getPost('customer_lastname'),
-        );
-        $model->saveCustomer($data);
-        return redirect()->to('/customer');
+        $model = new Model_Pembeli();
+        $test = $_POST['no_ktp'];
+        $data = [
+            'no_ktp' => $_POST['no_ktp'],
+            'username' => $_POST['username'],
+            'password' => $_POST['password'],
+            'email' => $_POST['email'],
+            'no_hp' => $_POST['no_hp'],
+            'nama' => $_POST['nama'],
+            'jenis_kelamin' => $_POST['jenis_kelamin'],
+            'alamat' => $_POST['alamat']
+        ];
+
+        $row = $model->getRowPembeli($test);
+        if (isset($row)) {
+            return redirect()->to('index');
+        } else {
+            $model->addPembeli($data);
+        }
     }
 }
