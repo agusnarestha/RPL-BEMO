@@ -1,12 +1,15 @@
 <section class="register" style="margin-top: 150px;">
     <div class="container">
         <div class="row">
-            <form action="/Test_register/register" method="post">
+            <form action="<?php echo base_url('Test_register/register'); ?>" method="post">
                 <div class="col-md-6">
                     <span>Nama</span>
                     <div class="row g-3 mb-3">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="First" aria-label="First name" name="nama">
+                            <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : '' ?>" placeholder="First" aria-label="First name" name="nama">
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('nama'); ?>
+                            </div>
                         </div>
                         <div class="col">
                             <input type="text" class="form-control" placeholder="Last" aria-label="Last name">
@@ -58,6 +61,7 @@
                 </div>
                 <div class="col-md-6">
                 </div>
+            </form>
         </div>
     </div>
 </section>
