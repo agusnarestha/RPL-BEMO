@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- ini body -->
 <head>
 	<meta charset="UTF-8">
 	<title>Tabel User</title>
@@ -10,7 +10,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 </head>
-
+<!-- Ini body -->
 <body style="width: 70%; margin: 0 auto; padding-top: 30px;">
 	<div class="row">
 		<div class="col-lg-12 margin-tb">
@@ -22,6 +22,7 @@
 	<hr>
 	<div class="row">
 		<div class="col-lg-12 margin-tb">
+		<!-- Menampilkan tabel pembeli -->
 			<table class="table table-bordered" id="display">
 				<thead class="text-center">
 					<tr>
@@ -38,6 +39,7 @@
 					</tr>
 				</thead>
 				<tbody>
+				<!-- melakukan perulangan untuk menampilkan data pembeli yang diambil dari database -->
 					<?php foreach ($pembeli as $row) : ?>
 						<tr>
 							<td><?= $row['id_pembeli']; ?></td>
@@ -56,6 +58,7 @@
 			</table>
 		</div>
 	</div>
+	<!-- membuat form search pada tabel menggunakan javascript -->
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#display').DataTable({
