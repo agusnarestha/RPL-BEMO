@@ -1,6 +1,7 @@
 <section class="register" style="margin-top: 150px;">
     <div class="container">
         <div class="row">
+            <!-- View ini menggunakan Controller Test_register.php dan menggunakan fungsi register -->
             <form action="<?php echo base_url('Test_register/register'); ?>" method="post">
                 <div class="col-md-6">
                     <span>Nama</span>

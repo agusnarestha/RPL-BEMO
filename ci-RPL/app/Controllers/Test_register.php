@@ -6,7 +6,7 @@ use App\Models\Model_Pembeli;
 
 class Test_register extends BaseController
 {
-    public function index()
+    public function index() #fungsi index memuat validasi disimpan dalam variabel $data
     {
         $data = [
             'validation' => \Config\Services::validation()
@@ -15,7 +15,7 @@ class Test_register extends BaseController
         echo view('test_register', $data);
         echo view('layout/footer');
     }
-    public function register()
+    public function register() #fungsi register pembeli, akan melakukan insert ke database ketika validasi sudah terpenuhi, jika tidak maka akan kembali ke fungsi index
     {
         $rules = [
             'nama'          => 'required|min_length[3]|max_length[20]',
