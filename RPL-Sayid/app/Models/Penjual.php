@@ -10,5 +10,10 @@ class Penjual extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'penjual';
-    protected $fillable = ['no_ktp'];
+    protected $fillable = ['no_ktp','user_id'];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

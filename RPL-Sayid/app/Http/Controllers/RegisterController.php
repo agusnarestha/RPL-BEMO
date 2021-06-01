@@ -30,15 +30,21 @@ class RegisterController extends Controller
     {
         $this->validate($request, [
             'nama' => 'required',
-            'no_ktp' => 'required',
-            'username' => 'required',
+            'no_ktp' => 'required|unique:user',
+            'username' => 'required|unique:user',
             'password' => 'required',
             'email' => 'required',
             'no_hp' => 'required',
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
-            'x' => 'required'
+            'isPembeli' => 'required'
         ]);
+
+        if ($request->isPembeli == 'Pembeli') {
+            $isPembeli = TRUE;
+        } else {
+            $isPembeli = FALSE;
+        }
 
         User::create([
             'nama' => $request->nama,
@@ -48,14 +54,9 @@ class RegisterController extends Controller
             'email' => $request->email,
             'no_hp' => $request->no_hp,
             'jenis_kelamin' => $request->jenis_kelamin,
-            'alamat' => $request->alamat
+            'alamat' => $request->alamat,
+            'isPembeli' => $isPembeli
         ]);
-
-        if ($request->x == 'Pembeli') {
-            Pembeli::create(['no_ktp' => $request->no_ktp]);
-        } else {
-            Penjual::create(['no_ktp' => $request->no_ktp]);
-        }
 
         return redirect('/');
     }

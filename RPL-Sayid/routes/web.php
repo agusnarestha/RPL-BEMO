@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PenjualController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +19,11 @@ use App\Http\Controllers\RegisterController;
 Route::get('/', function () {
     return view('index');
 });
+
 Route::get('/register', [RegisterController::class, 'create']);
 Route::post('/store', [RegisterController::class, 'store']);
+
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/logins', [LoginController::class, 'login']);
+
+Route::post('/inputMobil', [PenjualController::class, 'inputMobil']);
