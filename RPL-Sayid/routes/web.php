@@ -29,6 +29,9 @@ Route::post('/logins', [LoginController::class, 'login']);
 
 Route::get('/mobil/{id}', [PembeliController::class, 'getMobil']);
 Route::get('/infomobil/{id}/{moid}', [PembeliController::class, 'infoMobil']);
+Route::get('/topup/{id}', [PembeliController::class, 'topup']);
+Route::post('/insertsaldo', [PembeliController::class, 'insertSaldo']);
+Route::post('/belimobil', [PembeliController::class, 'beliMobil']);
 
 Route::get('/inputMobil/{id}', [PenjualController::class, 'inputMobil']);
 Route::post('/insertMobil', [PenjualController::class, 'insertMobil']);

@@ -31,4 +31,29 @@ class PembeliController extends Controller
         $mobil = Mobil::where('id', $id)->first()->getOriginal();
         return view('Pembeli.inmobil', compact('user', 'pembeli', 'mobil'));
     }
+
+    public function topup($id)
+    {
+        $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
+        $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
+        return view('Pembeli.topup', compact('user', 'pembeli'));
+    }
+
+    public function insertSaldo(Request $request)
+    {
+        $flight = User::find($request->id);
+        $flight->saldo = $request->saldo;
+        $flight->save();
+        $pembeli = Pembeli::where('user_id', $request->id)->first()->getOriginal();
+        return redirect()->action(
+            [PembeliController::class, 'CookiesPembeli'],
+            ['id' => $pembeli['id']]
+        );
+    }
+
+    public function beliMobil(Request $request)
+    {
+        $pembeli = Pembeli::where('id', $request->pembeli)->first()->getOriginal();
+        $mobil = Mobil::where('id', $request->mobil)->first()->getOriginal();
+    }
 }

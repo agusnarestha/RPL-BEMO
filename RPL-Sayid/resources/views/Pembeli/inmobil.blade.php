@@ -37,7 +37,11 @@
                     <li><span>TAGS</span>: Clothing, T-shirt, Woman</li>
                 </ul>
                 <div>
-                    <div class="p-code"><button>BUY</button></div>
+                    <form action="">
+                        <input type="hidden" name="pembeli" id="pembeli" value="{{$pembeli['id']}}">
+                        <input type="hidden" name="mobil" id="mobil" value="{{$mobil['id']}}">
+                        <button type="submit" class="site-btn register-btn">REGISTER</button>
+                    </form>
                 </div>
             </div>
         </div>
