@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PenjualController;
+use App\Http\Controllers\PembeliController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,11 @@ Route::post('/store', [RegisterController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/logins', [LoginController::class, 'login']);
 
-Route::post('/inputMobil', [PenjualController::class, 'inputMobil']);
+Route::get('/mobil/{id}', [PembeliController::class, 'getMobil']);
+Route::get('/infomobil/{id}/{moid}', [PembeliController::class, 'infoMobil']);
+
+Route::get('/inputMobil/{id}', [PenjualController::class, 'inputMobil']);
+Route::post('/insertMobil', [PenjualController::class, 'insertMobil']);
+
+Route::get('/penjual/{id}', [PenjualController::class, 'CookiesPenjual']);
+Route::get('/pembeli/{id}', [PembeliController::class, 'CookiesPembeli']);
