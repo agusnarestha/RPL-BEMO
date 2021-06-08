@@ -36,13 +36,9 @@
           <a href=""><button type="button" class="btn btn-outline-dark"><i class="fa fa-user ml-3" aria-hidden="true"></i></button></a>
         </li>
         <li class="nav-item">
-          <a type="button" class="btn btn-outline-danger" href="" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
-            {{ __('Logout') }}
+          <a type="button" class="btn btn-outline-danger" href="/">
+            Logout
           </a>
-          <form id="logout-form" action="" method="POST" style="display: none;">
-            @csrf
-          </form>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">

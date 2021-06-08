@@ -31,10 +31,14 @@ Route::get('/mobil/{id}', [PembeliController::class, 'getMobil']);
 Route::get('/infomobil/{id}/{moid}', [PembeliController::class, 'infoMobil']);
 Route::get('/topup/{id}', [PembeliController::class, 'topup']);
 Route::post('/insertsaldo', [PembeliController::class, 'insertSaldo']);
-Route::post('/belimobil', [PembeliController::class, 'beliMobil']);
+Route::get('/checkout/{id}/{moid}', [PembeliController::class, 'checkout']);
+Route::post('/belimobil', [PembeliController::class, 'belimobil']);
 
 Route::get('/inputMobil/{id}', [PenjualController::class, 'inputMobil']);
 Route::post('/insertMobil', [PenjualController::class, 'insertMobil']);
+Route::post('/deleteMobil', [PenjualController::class, 'deleteMobil']);
+Route::get('/editMobil/{id}/{moid}', [PenjualController::class, 'editMobil']);
+Route::post('/updateMobil', [PenjualController::class, 'updateMobil']);
 
 Route::get('/penjual/{id}', [PenjualController::class, 'CookiesPenjual']);
 Route::get('/pembeli/{id}', [PembeliController::class, 'CookiesPembeli']);

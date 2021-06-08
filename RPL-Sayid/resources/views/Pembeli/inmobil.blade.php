@@ -6,17 +6,9 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="product-pic-zoom">
-                <img class="product-big-img" src="img/product-single/product-1.jpg" alt="">
+                <img class="product-big-img" src="/img/{{$mobil['gambar']}}" alt="">
                 <div class="zoom-icon">
                     <i class="fa fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="product-thumbs">
-                <div class="product-thumbs-track ps-slider owl-carousel">
-                    <div class="pt active" data-imgbigurl="img/product-single/product-1.jpg"><img src="img/product-single/product-1.jpg" alt=""></div>
-                    <div class="pt" data-imgbigurl="img/product-single/product-2.jpg"><img src="img/product-single/product-2.jpg" alt=""></div>
-                    <div class="pt" data-imgbigurl="img/product-single/product-3.jpg"><img src="img/product-single/product-3.jpg" alt=""></div>
-                    <div class="pt" data-imgbigurl="img/product-single/product-3.jpg"><img src="img/product-single/product-3.jpg" alt=""></div>
                 </div>
             </div>
         </div>
@@ -25,7 +17,6 @@
                 <div class="pd-title">
                     <span>{{$mobil['tipe_mobil']}}</span>
                     <h3>{{$mobil['merek']}}</h3>
-                    <a href="#" class="heart-icon"><i class="icon_heart_alt"></i></a>
                 </div>
                 <div class="pd-desc">
                     <p>Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor
@@ -36,12 +27,8 @@
                     <li><span>CATEGORIES</span>: More Accessories, Wallets & Cases</li>
                     <li><span>TAGS</span>: Clothing, T-shirt, Woman</li>
                 </ul>
-                <div>
-                    <form action="">
-                        <input type="hidden" name="pembeli" id="pembeli" value="{{$pembeli['id']}}">
-                        <input type="hidden" name="mobil" id="mobil" value="{{$mobil['id']}}">
-                        <button type="submit" class="site-btn register-btn">REGISTER</button>
-                    </form>
+                <div class="filter-widget">
+                    <a href="{{ url('/checkout/'.$pembeli['id'].'/'.$mobil['id']) }}" class="filter-btn">Buy Now</a>
                 </div>
             </div>
         </div>

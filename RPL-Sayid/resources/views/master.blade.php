@@ -35,8 +35,8 @@
         <div class="header-top">
             <div class="container">
                 <div class="ht-right">
-                    <a href="/register" class="login-panel"><i class="fa fa-user"></i>Register</a>
-                    <a href="/login" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                    <a href="/register" class="login-panel px-3 py-3"><i class="fa fa-user"></i>Register</a>
+                    <a href="/login" class="login-panel px-3 py-3"><i class="fa fa-user"></i>Login</a>
                 </div>
             </div>
         </div>

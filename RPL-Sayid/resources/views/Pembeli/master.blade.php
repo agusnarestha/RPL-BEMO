@@ -7,7 +7,7 @@
     <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fashi | Template</title>
+    <title>BEMO | Beli Mobil Online</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -35,7 +35,8 @@
         <div class="header-top">
             <div class="container">
                 <div class="ht-right">
-                    <a href="#" class="login-panel"><i class="fa fa-user"></i>{{$user['nama']}}</a>
+                    <a href="/" class="login-panel px-3 py-3"><i class="fa fa-user"></i>Logout</a>
+                    <a href="#" class="login-panel px-3 py-3"><i class="fa fa-user"></i>{{$user['nama']}}</a>
                 </div>
             </div>
         </div>
@@ -44,8 +45,8 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="./index.html">
-                                <img src="img/logo.png" alt="">
+                            <a href="{{ url('/pembeli/'.$pembeli['id']) }}">
+                                <img src="{{url('/images/Bemo.png')}}" alt="" style="width: 50%;">
                             </a>
                         </div>
                     </div>
@@ -54,33 +55,17 @@
         </div>
         <div class="nav-item">
             <div class="container">
-                <div class="nav-depart">
-                    <div class="depart-btn">
-                        <i class="ti-menu"></i>
-                        <span>All departments</span>
-                        <ul class="depart-hover">
-                            <li class="active"><a href="#">Women’s Clothing</a></li>
-                            <li><a href="#">Men’s Clothing</a></li>
-                            <li><a href="#">Underwear</a></li>
-                            <li><a href="#">Kid's Clothing</a></li>
-                            <li><a href="#">Brand Fashion</a></li>
-                            <li><a href="#">Accessories/Shoes</a></li>
-                            <li><a href="#">Luxury Brands</a></li>
-                            <li><a href="#">Brand Outdoor Apparel</a></li>
-                        </ul>
-                    </div>
-                </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="{{ url('/pembeli/'.$pembeli['id']) }}">Home</a></li>
                         <li><a href="{{ url('/mobil/'.$pembeli['id']) }}">Shop</a></li>
                         <li><a href="{{ url('/topup/'.$pembeli['id']) }}">Top Up</a></li>
                         <li><a href="./blog.html">Blog</a></li>
                         <li><a href="./contact.html">Contact</a></li>
                     </ul>
                 </nav>
-                <div id="mobile-menu-wrap"></div>
             </div>
+            <div id="mobile-menu-wrap"></div>
         </div>
     </header>
     <!-- Header End -->

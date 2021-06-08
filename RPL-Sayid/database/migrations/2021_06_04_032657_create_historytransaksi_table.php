@@ -18,6 +18,7 @@ class CreateHistorytransaksiTable extends Migration
             $table->string('tipe_mobil');
             $table->string('merek');
             $table->string('model');
+            $table->string('bahan_bakar');
             $table->bigInteger('harga');
             $table->unsignedBigInteger('penjual_id')->unsigned();
             $table->foreign('penjual_id')->references('id')->on('penjual')->onDelete('cascade');

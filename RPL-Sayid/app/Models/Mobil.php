@@ -10,5 +10,5 @@ class Mobil extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'mobil';
-    protected $fillable = ['tipe_mobil','merek','model','harga','penjual_id'];
+    protected $fillable = ['tipe_mobil', 'merek', 'model', 'harga', 'penjual_id', 'gambar', 'bahan_bakar'];
 }
