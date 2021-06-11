@@ -35,6 +35,7 @@ class PenjualController extends Controller
             'model' => $request->model,
             'harga' => $request->harga,
             'bahan_bakar' => $request->bahan_bakar,
+            'desc' => $request->desc,
             'gambar' => $name_img,
             'penjual_id' => $request->penjual_id
         ]);
@@ -73,6 +74,7 @@ class PenjualController extends Controller
                 'model' => $request->model,
                 'harga' => $request->harga,
                 'bahan_bakar' => $request->bahan_bakar,
+                'desc' => $request->desc,
                 'gambar' => $name_img
             ]);
             $gambar->move('img', $name_img);
@@ -82,7 +84,8 @@ class PenjualController extends Controller
                 'merek' => $request->merek,
                 'model' => $request->model,
                 'harga' => $request->harga,
-                'bahan_bakar' => $request->bahan_bakar
+                'bahan_bakar' => $request->bahan_bakar,
+                'desc' => $request->desc
             ]);
         }
         return redirect()->action(

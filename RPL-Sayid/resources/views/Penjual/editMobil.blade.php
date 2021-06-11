@@ -42,6 +42,15 @@
             @enderror
         </div>
         <div class="form-group">
+            <label for="desc">desc</label>
+            <input type="text" class="form-control" name="desc" id="desc" value="{{$mobil['desc']}}">
+            @error('desc')
+            <div class="alert alert-danger">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="form-group">
             <label for="gambar">gambar</label>
             <input type="file" class="form-control" name="gambar" id="gambar">
             @error('gambar')
