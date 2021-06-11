@@ -75,10 +75,10 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/cerita" class="nav-link">
+              <a href="{{ url('/history/'.$penjual['id']) }}" class="nav-link">
                 <i class="nav-icon fas fa-file"></i>
                 <p>
-                  Mobilku
+                  History Transaksi
                   <i class="fas fa-angle-left right"></i>
                 </p>
               </a>

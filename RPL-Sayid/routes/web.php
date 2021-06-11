@@ -40,6 +40,7 @@ Route::post('/insertMobil', [PenjualController::class, 'insertMobil']);
 Route::post('/deleteMobil', [PenjualController::class, 'deleteMobil']);
 Route::get('/editMobil/{id}/{moid}', [PenjualController::class, 'editMobil']);
 Route::post('/updateMobil', [PenjualController::class, 'updateMobil']);
+Route::get('/history/{id}', [PenjualController::class, 'getHistory']);
 
 Route::get('/penjual/{id}', [PenjualController::class, 'CookiesPenjual']);
 Route::get('/pembeli/{id}', [PembeliController::class, 'CookiesPembeli']);

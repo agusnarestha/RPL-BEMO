@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Mobil;
 use App\Models\Penjual;
+use App\Models\HistoryTransaksi;
 use Auth;
 
 class PenjualController extends Controller
@@ -92,5 +93,13 @@ class PenjualController extends Controller
             [PenjualController::class, 'CookiesPenjual'],
             ['id' => $request->penjual_id]
         );
+    }
+
+    public function getHistory($id)
+    {
+        $penjual = Penjual::where('id', $id)->first()->getOriginal();
+        $user = User::where('id', $penjual['user_id'])->first()->getOriginal();
+        $history = HistoryTransaksi::where('penjual_id', $id)->get();
+        return view('Penjual.history', compact('user', 'penjual', 'history'));
     }
 }

@@ -60,7 +60,7 @@
                         <li><a href="{{ url('/pembeli/'.$pembeli['id']) }}">Home</a></li>
                         <li><a href="{{ url('/mobil/'.$pembeli['id']) }}">Shop</a></li>
                         <li><a href="{{ url('/topup/'.$pembeli['id']) }}">Top Up</a></li>
-                        <li><a href="./blog.html">Blog</a></li>
+                        <li><a href="{{ url('/history/'.$pembeli['id']) }}">History</a></li>
                         <li><a href="./contact.html">Contact</a></li>
                     </ul>
                 </nav>
