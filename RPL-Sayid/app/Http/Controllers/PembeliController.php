@@ -92,4 +92,12 @@ class PembeliController extends Controller
             ['id' => $request->pembeli_id]
         );
     }
+
+    public function getHistory($id)
+    {
+        $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
+        $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
+        $history = HistoryTransaksi::where('pembeli_id', $id)->get();
+        return view('Pembeli.history', compact('user', 'pembeli', 'history'));
+    }
 }

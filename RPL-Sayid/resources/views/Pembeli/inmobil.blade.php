@@ -15,17 +15,16 @@
         <div class="col-lg-6">
             <div class="product-details">
                 <div class="pd-title">
-                    <span>{{$mobil['tipe_mobil']}}</span>
-                    <h3>{{$mobil['merek']}}</h3>
+                    <span>{{$mobil['merek']}}</span>
+                    <h3>{{$mobil['model']}}</h3>
                 </div>
                 <div class="pd-desc">
-                    <p>Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor
-                        sit amet, consectetur adipisicing elit, sed do mod tempor</p>
+                    <p>{{$mobil['desc']}}</p>
                     <h4>{{$mobil['harga']}}</h4>
                 </div>
                 <ul class="pd-tags">
-                    <li><span>CATEGORIES</span>: More Accessories, Wallets & Cases</li>
-                    <li><span>TAGS</span>: Clothing, T-shirt, Woman</li>
+                    <li>{{$mobil['tipe_mobil']}}</li>
+                    <li>{{$mobil['bahan_bakar']}}</li>
                 </ul>
                 <div class="filter-widget">
                     <a href="{{ url('/checkout/'.$pembeli['id'].'/'.$mobil['id']) }}" class="filter-btn">Buy Now</a>
@@ -47,16 +46,8 @@
                     <div class="product-content">
                         <div class="row">
                             <div class="col-lg-7">
-                                <h5>Introduction</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in </p>
-                                <h5>Features</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in </p>
+                                <h5>Description</h5>
+                                <p>{{$mobil['desc']}}</p>
                             </div>
                             <div class="col-lg-5">
                                 <img src="img/product-single/tab-desc.jpg" alt="">

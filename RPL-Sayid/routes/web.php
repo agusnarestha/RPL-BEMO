@@ -33,6 +33,7 @@ Route::get('/topup/{id}', [PembeliController::class, 'topup']);
 Route::post('/insertsaldo', [PembeliController::class, 'insertSaldo']);
 Route::get('/checkout/{id}/{moid}', [PembeliController::class, 'checkout']);
 Route::post('/belimobil', [PembeliController::class, 'belimobil']);
+Route::get('/history/{id}', [PembeliController::class, 'getHistory']);
 
 Route::get('/inputMobil/{id}', [PenjualController::class, 'inputMobil']);
 Route::post('/insertMobil', [PenjualController::class, 'insertMobil']);
