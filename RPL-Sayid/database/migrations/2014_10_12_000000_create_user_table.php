@@ -23,6 +23,7 @@ class CreateUserTable extends Migration
             $table->string('nama');
             $table->string('jenis_kelamin');
             $table->string('alamat');
+            $table->integer('saldo');
             $table->boolean('isPembeli');
         });
     }

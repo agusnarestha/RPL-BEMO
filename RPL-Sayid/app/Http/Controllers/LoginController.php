@@ -21,39 +21,49 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        $user = User::where('username',$request->username)->where('password',$request->password)->first();
-        if($user == NULL){
+        $user = User::where('username', $request->username)->where('password', $request->password)->first()->getOriginal();
+        if ($user == NULL) {
             return view('login');
-        }else{
-            if($user['isPembeli']==TRUE){
-                $pembeli = Pembeli::where('user_id',$user['id'])->first()->getOriginal();
-                if($pembeli == NULL){
+        } else {
+            if ($user['isPembeli'] == TRUE) {
+                $x = Pembeli::where('user_id', $user['id'])->first();
+                if ($x == NULL) {
                     Pembeli::create([
                         'no_ktp' => $user['no_ktp'],
                         'user_id' => $user['id']
                     ]);
-                    return view('Pembeli.index',compact('user'));
-                }else{
-                    return view('Pembeli.index',compact('user'));
+                    $pembeli = Pembeli::where('user_id', $user['id'])->first()->getOriginal();
+                    return redirect()->action(
+                        [PembeliController::class, 'CookiesPembeli'],
+                        ['id' => $pembeli['id']]
+                    );
+                } else {
+                    $pembeli = Pembeli::where('user_id', $user['id'])->first()->getOriginal();
+                    return redirect()->action(
+                        [PembeliController::class, 'CookiesPembeli'],
+                        ['id' => $pembeli['id']]
+                    );
                 }
-            }
-            else{
-                $penjual = Penjual::where('user_id',$user['id'])->first()->getOriginal();
-                if($penjual == NULL){
+            } else {
+                $x = Penjual::where('user_id', $user['id'])->first();
+                if ($x == NULL) {
                     Penjual::create([
                         'no_ktp' => $user['no_ktp'],
                         'user_id' => $user['id']
                     ]);
-                    return view('Penjual.index',compact('user'));
-                }else{
-                    return view('Penjual.index',compact('user'));
+                    $penjual = Penjual::where('user_id', $user['id'])->first()->getOriginal();
+                    return redirect()->action(
+                        [PenjualController::class, 'CookiesPenjual'],
+                        ['id' => $penjual['id']]
+                    );
+                } else {
+                    $penjual = Penjual::where('user_id', $user['id'])->first()->getOriginal();
+                    return redirect()->action(
+                        [PenjualController::class, 'CookiesPenjual'],
+                        ['id' => $penjual['id']]
+                    );
                 }
             }
         }
-    }
-
-    public function Cookies($id){
-        $user = User::where('username', $id)->first();
-        $user = $user->getOriginal();
     }
 }

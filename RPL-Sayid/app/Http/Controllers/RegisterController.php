@@ -55,6 +55,7 @@ class RegisterController extends Controller
             'no_hp' => $request->no_hp,
             'jenis_kelamin' => $request->jenis_kelamin,
             'alamat' => $request->alamat,
+            'saldo' => 0,
             'isPembeli' => $isPembeli
         ]);
 
