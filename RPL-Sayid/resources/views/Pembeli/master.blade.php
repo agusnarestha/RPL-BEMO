@@ -53,7 +53,7 @@
                     <div class="col-lg-6 text-right col-md-6">
                         <ul class="nav-right">
                             <li class="heart-icon">
-                                <a href="#">
+                                <a href="{{ url('/wish/'.$pembeli['id']) }}">
                                     <i class="icon_heart_alt"></i>
                                     <span>{{$wishlist->count()}}</span>
                                 </a>
