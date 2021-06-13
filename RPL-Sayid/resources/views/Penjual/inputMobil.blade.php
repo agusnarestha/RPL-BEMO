@@ -33,6 +33,15 @@
             @enderror
         </div>
         <div class="form-group">
+            <label for="tahun">tahun</label>
+            <input type="text" class="form-control" name="tahun" id="tahun" placeholder="Masukkan tahun">
+            @error('tahun')
+            <div class="alert alert-danger">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="form-group">
             <label for="bahan_bakar">bahan_bakar</label>
             <input type="text" class="form-control" name="bahan_bakar" id="bahan_bakar" placeholder="Masukkan bahan_bakar">
             @error('bahan_bakar')

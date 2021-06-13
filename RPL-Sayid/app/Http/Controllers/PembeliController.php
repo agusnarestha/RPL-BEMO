@@ -31,7 +31,9 @@ class PembeliController extends Controller
         $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
         $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
         $mobil = Mobil::where('id', $moid)->first()->getOriginal();
-        return view('Pembeli.inmobil', compact('user', 'pembeli', 'mobil'));
+        $penjual1 = Penjual::where('id', $mobil['penjual_id'])->first()->getOriginal();
+        $penjual = User::where('id', $penjual1['user_id'])->first()->getOriginal();
+        return view('Pembeli.inmobil', compact('user', 'pembeli', 'mobil', 'penjual'));
     }
 
     public function topup($id)
@@ -67,13 +69,20 @@ class PembeliController extends Controller
         $pembeli = Pembeli::find($request->pembeli_id)->first()->getOriginal();
         $penjual = Penjual::find($mobil['penjual_id'])->first()->getOriginal();
 
-        $flight2 = User::find($penjual['user_id']);
-        $flight2->saldo = $flight2->saldo + $mobil['harga'];
-        $flight2->save();
-
         $flight = User::find($pembeli['user_id']);
-        $flight->saldo = $flight->saldo - $mobil['harga'];
-        $flight->save();
+        if ($flight->saldo < $mobil['harga']) {
+            return redirect()->action(
+                [PembeliController::class, 'topup'],
+                ['id' => $pembeli['id']]
+            );
+        } else {
+            $flight->saldo = $flight->saldo - $mobil['harga'];
+            $flight->save();
+
+            $flight2 = User::find($penjual['user_id']);
+            $flight2->saldo = $flight2->saldo + $mobil['harga'];
+            $flight2->save();
+        }
 
         HistoryTransaksi::create([
             'tipe_mobil' => $mobil['tipe_mobil'],
@@ -81,6 +90,8 @@ class PembeliController extends Controller
             'model' => $mobil['model'],
             'bahan_bakar' => $mobil['bahan_bakar'],
             'harga' => $mobil['harga'],
+            'tahun' => $mobil['tahun'],
+            'gambar' => $mobil['gambar'],
             'penjual_id' => $mobil['penjual_id'],
             'pembeli_id' => $request->pembeli_id
         ]);

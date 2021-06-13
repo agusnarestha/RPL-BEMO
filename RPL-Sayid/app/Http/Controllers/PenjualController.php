@@ -37,6 +37,7 @@ class PenjualController extends Controller
             'harga' => $request->harga,
             'bahan_bakar' => $request->bahan_bakar,
             'desc' => $request->desc,
+            'tahun' => $request->tahun,
             'gambar' => $name_img,
             'penjual_id' => $request->penjual_id
         ]);
@@ -58,7 +59,7 @@ class PenjualController extends Controller
 
     public function editMobil($id, $moid)
     {
-        $mobil = Mobil::find($moid)->first()->getOriginal();
+        $mobil = Mobil::where('id', $moid)->first()->getOriginal();
         $penjual = Penjual::find($id)->first()->getOriginal();
         return view('Penjual.editMobil', compact('penjual', 'mobil'));
     }
@@ -66,7 +67,7 @@ class PenjualController extends Controller
     public function updateMobil(Request $request)
     {
         $gambar = $request->foto;
-        $mobil = Mobil::find($request->mobil_id);
+        $mobil = Mobil::where('id', $request->mobil_id);
         if ($gambar != NULL) {
             $name_img = time() . ' - ' . $gambar->getClientOriginalName();
             $mobil->update([
@@ -76,6 +77,7 @@ class PenjualController extends Controller
                 'harga' => $request->harga,
                 'bahan_bakar' => $request->bahan_bakar,
                 'desc' => $request->desc,
+                'tahun' => $request->tahun,
                 'gambar' => $name_img
             ]);
             $gambar->move('img', $name_img);
@@ -86,7 +88,8 @@ class PenjualController extends Controller
                 'model' => $request->model,
                 'harga' => $request->harga,
                 'bahan_bakar' => $request->bahan_bakar,
-                'desc' => $request->desc
+                'desc' => $request->desc,
+                'tahun' => $request->tahun
             ]);
         }
         return redirect()->action(
