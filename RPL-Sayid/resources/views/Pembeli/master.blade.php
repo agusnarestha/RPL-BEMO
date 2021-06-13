@@ -43,12 +43,23 @@
         <div class="container">
             <div class="inner-header">
                 <div class="row">
-                    <div class="col-lg-2 col-md-2">
+                    <div class="col-lg-6 col-md-6">
                         <div class="logo">
                             <a href="{{ url('/pembeli/'.$pembeli['id']) }}">
-                                <img src="{{url('/images/Bemo.png')}}" alt="" style="width: 50%;">
+                                <img src="{{url('/images/Bemo.png')}}" alt="" style="width: 30%;">
                             </a>
                         </div>
+                    </div>
+                    <div class="col-lg-6 text-right col-md-6">
+                        <ul class="nav-right">
+                            <li class="heart-icon">
+                                <a href="#">
+                                    <i class="icon_heart_alt"></i>
+                                    <span>{{$wishlist->count()}}</span>
+                                </a>
+                            </li>
+                            <li class="cart-price">Rp.{{$user['saldo']}}</li>
+                        </ul>
                     </div>
                 </div>
             </div>

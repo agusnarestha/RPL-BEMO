@@ -7,6 +7,7 @@ use App\Models\Pembeli;
 use App\Models\Penjual;
 use App\Models\User;
 use App\Models\Mobil;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 
 class PembeliController extends Controller
@@ -15,7 +16,8 @@ class PembeliController extends Controller
     {
         $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
         $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
-        return view('Pembeli.index', compact('user', 'pembeli'));
+        $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
+        return view('Pembeli.index', compact('user', 'pembeli', 'wishlist'));
     }
 
     public function getMobil($id)
@@ -23,7 +25,8 @@ class PembeliController extends Controller
         $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
         $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
         $mobil = Mobil::all();
-        return view('Pembeli.list', compact('user', 'pembeli', 'mobil'));
+        $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
+        return view('Pembeli.list', compact('user', 'pembeli', 'mobil', 'wishlist'));
     }
 
     public function infoMobil($id, $moid)
@@ -33,14 +36,16 @@ class PembeliController extends Controller
         $mobil = Mobil::where('id', $moid)->first()->getOriginal();
         $penjual1 = Penjual::where('id', $mobil['penjual_id'])->first()->getOriginal();
         $penjual = User::where('id', $penjual1['user_id'])->first()->getOriginal();
-        return view('Pembeli.inmobil', compact('user', 'pembeli', 'mobil', 'penjual'));
+        $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
+        return view('Pembeli.inmobil', compact('user', 'pembeli', 'mobil', 'penjual', 'wishlist'));
     }
 
     public function topup($id)
     {
         $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
         $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
-        return view('Pembeli.topup', compact('user', 'pembeli'));
+        $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
+        return view('Pembeli.topup', compact('user', 'pembeli', 'wishlist'));
     }
 
     public function insertSaldo(Request $request)
@@ -60,7 +65,8 @@ class PembeliController extends Controller
         $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
         $mobil = Mobil::where('id', $moid)->first()->getOriginal();
         $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
-        return view('Pembeli.checkout', compact('mobil', 'pembeli', 'user'));
+        $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
+        return view('Pembeli.checkout', compact('mobil', 'pembeli', 'user', 'wishlist'));
     }
 
     public function belimobil(Request $request)
@@ -110,5 +116,22 @@ class PembeliController extends Controller
         $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
         $history = HistoryTransaksi::where('pembeli_id', $id)->get();
         return view('Pembeli.history', compact('user', 'pembeli', 'history'));
+    }
+
+    public function addWishlist($id, $moid)
+    {
+        $x = Wishlist::where('pembeli_id', $id)->where('mobil_id', $moid)->first();
+        if ($x == NULL) {
+            Wishlist::create([
+                'pembeli_id' => $id,
+                'mobil_id' => $moid
+            ]);
+        } else {
+            $x->delete();
+        }
+        return redirect()->action(
+            [PembeliController::class, 'getMobil'],
+            ['id' => $id]
+        );
     }
 }

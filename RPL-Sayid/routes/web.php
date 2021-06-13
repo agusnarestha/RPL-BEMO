@@ -34,6 +34,7 @@ Route::post('/insertsaldo', [PembeliController::class, 'insertSaldo']);
 Route::get('/checkout/{id}/{moid}', [PembeliController::class, 'checkout']);
 Route::post('/belimobil', [PembeliController::class, 'belimobil']);
 Route::get('/historyPembeli/{id}', [PembeliController::class, 'getHistory']);
+Route::get('/wishlist/{id}/{moid}', [PembeliController::class, 'addWishlist']);
 
 Route::get('/inputMobil/{id}', [PenjualController::class, 'inputMobil']);
 Route::post('/insertMobil', [PenjualController::class, 'insertMobil']);
