@@ -8,6 +8,7 @@
         <th>tipe_mobil</th>
         <th>merek</th>
         <th>model</th>
+        <th>tahun</th>
         <th>bahan_bakar</th>
         <th>harga</th>
     </tr>
@@ -17,6 +18,7 @@
         <th>{{$m->tipe_mobil}}</th>
         <th>{{$m->merek}}</th>
         <th>{{$m->model}}</th>
+        <th>{{$m->tahun}}</th>
         <th>{{$m->bahan_bakar}}</th>
         <th>{{$m->harga}}</th>
         <th>

@@ -19,7 +19,7 @@
                     <h3>{{$mobil['model']}}</h3>
                 </div>
                 <div class="pd-desc">
-                    <p>{{$mobil['desc']}}</p>
+                    <p>{{$penjual['nama']}}</p>
                     <h4>{{$mobil['harga']}}</h4>
                 </div>
                 <ul class="pd-tags">
