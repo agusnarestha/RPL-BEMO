@@ -22,7 +22,7 @@
                             <h5>{{$m->model}}</h5>
                         </a>
                         <div class="product-price">
-                            {{$m->harga}}
+                            @currency($m['harga'])
                         </div>
                     </div>
                 </div>

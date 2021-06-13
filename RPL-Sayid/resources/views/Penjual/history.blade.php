@@ -19,7 +19,7 @@
         <th>{{$m->model}}</th>
         <th>{{$m->tahun}}</th>
         <th>{{$m->bahan_bakar}}</th>
-        <th>{{$m->harga}}</th>
+        <th>@currency($m['harga'])</th>
     </tr>
     @endforeach
 </table>

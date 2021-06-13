@@ -35,7 +35,7 @@
         <th>{{$m->model}}</th>
         <th>{{$m->tahun}}</th>
         <th>{{$m->bahan_bakar}}</th>
-        <th>{{$m->harga}}</th>
+        <th>@currency($m->harga)</th>
         <th>
             <form action="{{ url('/editMobil/'.$penjual['id'].'/'.$m->id) }}">
                 <button class="btn btn-secondary">Edit</button>

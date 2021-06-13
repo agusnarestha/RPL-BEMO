@@ -13,7 +13,7 @@
                         <div class="order-total">
                             <ul class="order-table">
                                 <li>Product <span>Total</span></li>
-                                <li class="fw-normal">{{$mobil['model']}}<span>{{$mobil['harga']}}</span></li>
+                                <li class="fw-normal">{{$mobil['model']}}<span>@currency($mobil['harga'])</span></li>
                             </ul>
                             <div class="order-btn">
                                 <input type="hidden" value="{{$mobil['id']}}" name="mobil_id" id="mobil_id">

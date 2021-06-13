@@ -63,7 +63,7 @@
                                     <span>{{$wishlist->count()}}</span>
                                 </a>
                             </li>
-                            <li class="cart-price">Rp.{{$user['saldo']}}</li>
+                            <li class="cart-price">@currency($user['saldo'])</li>
                         </ul>
                     </div>
                 </div>

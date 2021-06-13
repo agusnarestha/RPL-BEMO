@@ -23,7 +23,8 @@ class PenjualController extends Controller
     public function inputMobil($id)
     {
         $penjual = Penjual::where('id', $id)->first()->getOriginal();
-        return view('Penjual.inputMobil', compact('penjual'));
+        $user = User::where('id', $penjual['user_id'])->first()->getOriginal();
+        return view('Penjual.inputMobil', compact('user','penjual'));
     }
 
     public function insertMobil(Request $request)
@@ -83,7 +84,8 @@ class PenjualController extends Controller
     {
         $mobil = Mobil::where('id', $moid)->first()->getOriginal();
         $penjual = Penjual::find($id)->first()->getOriginal();
-        return view('Penjual.editMobil', compact('penjual', 'mobil'));
+        $user = User::where('id', $penjual['user_id'])->first()->getOriginal();
+        return view('Penjual.editMobil', compact('penjual', 'mobil','user'));
     }
 
     public function updateMobil(Request $request)

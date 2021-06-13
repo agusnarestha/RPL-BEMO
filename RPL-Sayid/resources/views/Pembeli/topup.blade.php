@@ -9,7 +9,7 @@
 
                 <div class="register-form">
                     <h2>Top Up</h2>
-                    <h3>Saldo saat ini Rp.{{$user['saldo']}}</h3>
+                    <h3>Saldo saat ini @currency($user['saldo'])</h3>
                     <br>
                     @if(session('kurangSaldo'))
                         <div class="alert alert-danger">

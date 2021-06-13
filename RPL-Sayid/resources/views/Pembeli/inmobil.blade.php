@@ -20,7 +20,7 @@
                 </div>
                 <div class="pd-desc">
                     <p>{{$penjual['nama']}}</p>
-                    <h4>{{$mobil['harga']}}</h4>
+                    <h4>@currency($mobil['harga'])</h4>
                 </div>
                 <ul class="pd-tags">
                     <li>{{$mobil['tipe_mobil']}}</li>
