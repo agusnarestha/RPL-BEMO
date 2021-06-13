@@ -30,14 +30,30 @@ class RegisterController extends Controller
     {
         $this->validate($request, [
             'nama' => 'required',
-            'no_ktp' => 'required|unique:user',
+            'no_ktp' => 'required|unique:user|min:16|max:16',
             'username' => 'required|unique:user',
             'password' => 'required',
             'email' => 'required',
-            'no_hp' => 'required',
+            'no_hp' => 'required|min:10|max:13',
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
             'isPembeli' => 'required'
+        ],
+        [
+            'nama.required' => 'Nama Tidak Boleh Kosong !',
+            'no_ktp.required' => 'No KTP Tidak Boleh Kosong !',
+            'username.required' => 'Username Tidak Boleh Kosong !',
+            'password.required' => 'Password Tidak Boleh Kosong !',
+            'email.required' => 'Email Tidak Boleh Kosong !',
+            'no_hp.required' => 'No HP Tidak Boleh Kosong !',
+            'jenis_kelamin.required' => 'Jenis Kelamin Tidak Boleh Kosong !',
+            'alamat.required' => 'Alamat Tidak Boleh Kosong !',
+            'isPembeli.required' => 'Register Sebagai Tidak Boleh Kosong !',
+            'no_ktp.unique' =>'No KTP Telah Digunakan',
+            'no_ktp.min' => 'No KTP Tidak Valid',
+            'no_ktp.max' => 'No KTP Tidak Valid',
+            'no_hp.min' => 'No Hp Tidak Valid',
+            'no_hp.max' => 'No Hp Tidak Valid',
         ]);
 
         if ($request->isPembeli == 'Pembeli') {

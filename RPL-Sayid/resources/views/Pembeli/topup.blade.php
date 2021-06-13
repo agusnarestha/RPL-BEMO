@@ -6,10 +6,16 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
+
                 <div class="register-form">
                     <h2>Top Up</h2>
                     <h3>Saldo saat ini Rp.{{$user['saldo']}}</h3>
                     <br>
+                    @if(session('kurangSaldo'))
+                        <div class="alert alert-danger">
+                            {{ session('kurangSaldo')}}
+                        </div>
+                    @endif
                     <form action="/insertsaldo" method="post">
                         @csrf
                         <div class="form-group">

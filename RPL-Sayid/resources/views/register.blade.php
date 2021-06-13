@@ -12,8 +12,8 @@
                     <form action="/store" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="no_ktp">no_ktp</label>
-                            <input type="text" class="form-control" name="no_ktp" id="no_ktp" placeholder="Masukkan no_ktp">
+                            <label for="no_ktp">No KTP</label>
+                            <input type="text" class="form-control" name="no_ktp" id="no_ktp" placeholder="Masukkan No KTP">
                             @error('no_ktp')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -21,8 +21,8 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="username">username</label>
-                            <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan username">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan Username">
                             @error('username')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -30,8 +30,8 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="password">password</label>
-                            <input type="text" class="form-control" name="password" id="password" placeholder="Masukkan password">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Masukkan Password">
                             @error('password')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -39,8 +39,8 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="judul">email</label>
-                            <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan email">
+                            <label for="judul">Email</label>
+                            <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan Email">
                             @error('email')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -48,8 +48,8 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="no_hp">no_hp</label>
-                            <input type="text" class="form-control" name="no_hp" id="no_hp" placeholder="Masukkan no_hp">
+                            <label for="no_hp">No Hp</label>
+                            <input type="text" class="form-control" name="no_hp" id="no_hp" placeholder="Masukkan No HP">
                             @error('no_hp')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -57,8 +57,8 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="nama">nama</label>
-                            <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan nama">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan Nama">
                             @error('nama')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -66,8 +66,11 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="jenis_kelamin">jenis_kelamin</label>
-                            <input type="text" class="form-control" name="jenis_kelamin" id="jenis_kelamin" placeholder="Masukkan jenis_kelamin">
+                            <label for="jenis_kelamin">Jenis Kelamin</label>
+                            <select id="jenis_kelamin" class="form-control" name="jenis_kelamin">
+                                <option>Laki-Laki</option>
+                                <option>Perempuan</option>
+                            </select>
                             @error('jenis_kelamin')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -75,8 +78,8 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="alamat">alamat</label>
-                            <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Masukkan alamat">
+                            <label for="alamat">Alamat</label>
+                            <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Masukkan Alamat">
                             @error('alamat')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -84,8 +87,11 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="isPembeli">isPembeli</label>
-                            <input type="text" class="form-control" name="isPembeli" id="isPembeli" placeholder="Masukkan isPembeli">
+                            <label for="isPembeli">Register Sebagai</label>
+                            <select id="isPembeli" class="form-control" name="isPembeli">
+                                <option>Penjual</option>
+                                <option>Pembeli</option>
+                            </select>
                             @error('isPembeli')
                             <div class="alert alert-danger">
                                 {{ $message }}

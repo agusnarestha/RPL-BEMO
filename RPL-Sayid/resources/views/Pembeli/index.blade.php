@@ -2,6 +2,11 @@
 
 @section('content')
 <!-- Hero Section Begin -->
+@if(session('beliMobil'))
+    <div class="alert alert-success">
+        {{ session('beliMobil')}}
+    </div>
+@endif
 <section class="hero-section">
     <div class="hero-items owl-carousel">
         <div class="single-hero-items set-bg" data-setbg="{{url('/img/hero-1.jpg')}}">

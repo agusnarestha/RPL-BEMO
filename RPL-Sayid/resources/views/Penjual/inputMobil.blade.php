@@ -6,8 +6,8 @@
     <form action="/insertMobil" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-            <label for="tipe_mobil">tipe_mobil</label>
-            <input type="text" class="form-control" name="tipe_mobil" id="tipe_mobil" placeholder="Masukkan tipe_mobil">
+            <label for="tipe_mobil">Tipe Mobil</label>
+            <input type="text" class="form-control" name="tipe_mobil" id="tipe_mobil" placeholder="Masukkan Tipe Mobil">
             @error('tipe_mobil')
             <div class="alert alert-danger">
                 {{ $message }}
@@ -15,8 +15,8 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="merek">merek</label>
-            <input type="text" class="form-control" name="merek" id="merek" placeholder="Masukkan merek">
+            <label for="merek">Merek</label>
+            <input type="text" class="form-control" name="merek" id="merek" placeholder="Masukkan Merek">
             @error('merek')
             <div class="alert alert-danger">
                 {{ $message }}
@@ -24,8 +24,8 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="model">model</label>
-            <input type="text" class="form-control" name="model" id="model" placeholder="Masukkan model">
+            <label for="model">Model</label>
+            <input type="text" class="form-control" name="model" id="model" placeholder="Masukkan Model">
             @error('model')
             <div class="alert alert-danger">
                 {{ $message }}
@@ -33,8 +33,8 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="tahun">tahun</label>
-            <input type="text" class="form-control" name="tahun" id="tahun" placeholder="Masukkan tahun">
+            <label for="tahun">Tahun</label>
+            <input type="text" class="form-control" name="tahun" id="tahun" placeholder="Masukkan Tahun">
             @error('tahun')
             <div class="alert alert-danger">
                 {{ $message }}
@@ -42,8 +42,8 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="bahan_bakar">bahan_bakar</label>
-            <input type="text" class="form-control" name="bahan_bakar" id="bahan_bakar" placeholder="Masukkan bahan_bakar">
+            <label for="bahan_bakar">Bahan Bakar</label>
+            <input type="text" class="form-control" name="bahan_bakar" id="bahan_bakar" placeholder="Masukkan Bahan Bakar">
             @error('bahan_bakar')
             <div class="alert alert-danger">
                 {{ $message }}
@@ -51,8 +51,8 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="desc">desc</label>
-            <input type="text" class="form-control" name="desc" id="desc" placeholder="Masukkan desc">
+            <label for="desc">Deskripsi</label>
+            <textarea class="form-control" name="desc" id="desc" placeholder="Masukkan Deskripsi" rows="3"></textarea>
             @error('desc')
             <div class="alert alert-danger">
                 {{ $message }}
@@ -60,8 +60,8 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="gambar">gambar</label>
-            <input type="file" class="form-control" name="gambar" id="gambar" placeholder="Masukkan gambar">
+            <label for="gambar">Gambar</label>
+            <input type="file" class="form-control" name="gambar" id="gambar" placeholder="Masukkan Gambar">
             @error('gambar')
             <div class="alert alert-danger">
                 {{ $message }}
@@ -69,8 +69,8 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="harga">harga</label>
-            <input type="text" class="form-control" name="harga" id="harga" placeholder="Masukkan harga">
+            <label for="harga">Harga</label>
+            <input type="text" class="form-control" name="harga" id="harga" placeholder="Masukkan Harga">
             @error('harga')
             <div class="alert alert-danger">
                 {{ $message }}

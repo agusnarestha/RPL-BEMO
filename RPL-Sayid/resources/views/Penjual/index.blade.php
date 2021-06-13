@@ -2,6 +2,21 @@
 
 @section('content')
 <h1>Selamat Datang {{$user['nama']}}!</h1>
+@if(session('addMobil'))
+    <div class="alert alert-success">
+        {{ session('addMobil')}}
+    </div>
+@endif
+@if(session('deleteMobil'))
+    <div class="alert alert-success">
+        {{ session('deleteMobil')}}
+    </div>
+@endif
+@if(session('updateMobil'))
+    <div class="alert alert-success">
+        {{ session('updateMobil')}}
+    </div>
+@endif
 <table style="width:100%">
     <tr>
         <th>gambar</th>

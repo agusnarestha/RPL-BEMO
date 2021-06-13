@@ -19,6 +19,10 @@ class LoginController extends Controller
         $this->validate($request, [
             'username' => 'required',
             'password' => 'required',
+        ],
+        [
+            'username.required' => 'Username Tidak Boleh Kosong !',
+            'password.required' => 'Password Tidak Boleh Kosong !',
         ]);
 
         if ($request->username == 'admin' and $request->password == 'admin') {
@@ -29,7 +33,7 @@ class LoginController extends Controller
 
         $user = User::where('username', $request->username)->where('password', $request->password)->first();
         if ($user == NULL) {
-            return view('login');
+            return redirect('login')->with('faillogin','Akun tidak ditemukan');
         } else {
             $user = $user->getOriginal();
             if ($user['isPembeli'] == TRUE) {

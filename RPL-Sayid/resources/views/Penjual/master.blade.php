@@ -29,7 +29,7 @@
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item mr-3">
-          <a href=""><button type="button" class="btn btn-outline-dark"><i class="fa fa-user ml-3" aria-hidden="true"></i></button></a>
+          <a href=""><button type="button" class="btn btn-outline-dark"><i class="fa fa-user ml-3" aria-hidden="true"></i>{{$user['nama']}}</button></a>
         </li>
         <li class="nav-item">
           <a type="button" class="btn btn-outline-danger" href="/">

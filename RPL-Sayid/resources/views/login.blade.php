@@ -10,8 +10,13 @@
                     <form action="/logins" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="username">username</label>
-                            <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan username">
+                            @if(session('faillogin'))
+                            <div class="alert alert-danger">
+                                {{ session('faillogin')}}
+                            </div>
+                            @endif
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan Username">
                             @error('username')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -19,8 +24,8 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="password">password</label>
-                            <input type="text" class="form-control" name="password" id="password" placeholder="Masukkan password">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Masukkan Password">
                             @error('password')
                             <div class="alert alert-danger">
                                 {{ $message }}

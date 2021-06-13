@@ -57,7 +57,7 @@ class PembeliController extends Controller
         return redirect()->action(
             [PembeliController::class, 'CookiesPembeli'],
             ['id' => $pembeli['id']]
-        );
+        )->with('insertSaldo','Saldo Berhasil Ditambahkan');
     }
 
     public function checkout($id, $moid)
@@ -80,7 +80,7 @@ class PembeliController extends Controller
             return redirect()->action(
                 [PembeliController::class, 'topup'],
                 ['id' => $pembeli['id']]
-            );
+            )->with('kurangSaldo','Saldo Anda Tidak Cukup !!!');
         } else {
             $flight->saldo = $flight->saldo - $mobil['harga'];
             $flight->save();
@@ -107,7 +107,7 @@ class PembeliController extends Controller
         return redirect()->action(
             [PembeliController::class, 'CookiesPembeli'],
             ['id' => $request->pembeli_id]
-        );
+        )->with('beliMobil','Mobil Berhasil Dibeli');
     }
 
     public function getHistory($id)

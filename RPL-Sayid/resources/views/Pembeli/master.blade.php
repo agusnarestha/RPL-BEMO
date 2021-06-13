@@ -52,6 +52,11 @@
                     </div>
                     <div class="col-lg-6 text-right col-md-6">
                         <ul class="nav-right">
+                            @if(session('insertSaldo'))
+                            <div class="alert alert-success">
+                                {{ session('insertSaldo')}}
+                            </div>
+                            @endif
                             <li class="heart-icon">
                                 <a href="#">
                                     <i class="icon_heart_alt"></i>
