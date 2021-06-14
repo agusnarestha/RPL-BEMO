@@ -129,7 +129,33 @@ class PenjualController extends Controller
     {
         $penjual = Penjual::where('id', $id)->first()->getOriginal();
         $user = User::where('id', $penjual['user_id'])->first()->getOriginal();
-        $history = HistoryTransaksi::where('penjual_id', $id)->get();
+        $history = HistoryTransaksi::join('pembeli', 'historytransaksi.pembeli_id', '=', 'pembeli.id')->where('pembeli_id', $id)->get();
         return view('Penjual.history', compact('user', 'penjual', 'history'));
+    }
+
+    public function tarik($id)
+    {
+        $penjual = Penjual::where('id', $id)->first()->getOriginal();
+        $user = User::where('id', $penjual['user_id'])->first()->getOriginal();
+        return view('Penjual.tarik', compact('user', 'penjual'));
+    }
+
+    public function tarikSaldo(Request $request)
+    {
+        $penjual = Penjual::where('user_id', $request->id)->first()->getOriginal();
+        $flight = User::find($request->id);
+        if ($flight->saldo < $request->saldo) {
+            return redirect()->action(
+                [PenjualController::class, 'CookiesPenjual'],
+                ['id' => $penjual['id']]
+            )->with('gagalSaldo', 'Saldo Kurang');
+        } else {
+            $flight->saldo = $flight->saldo - $request->saldo;
+            $flight->save();
+            return redirect()->action(
+                [PenjualController::class, 'CookiesPenjual'],
+                ['id' => $penjual['id']]
+            )->with('tarikSaldo', 'Saldo Berhasil Ditarik');
+        }
     }
 }

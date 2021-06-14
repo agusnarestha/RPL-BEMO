@@ -10,7 +10,7 @@ class User extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'user';
-    protected $fillable = ['no_ktp', 'username', 'password', 'email', 'no_hp', 'nama', 'jenis_kelamin', 'alamat', 'saldo', 'isPembeli'];
+    protected $fillable = ['nama', 'no_ktp', 'username', 'password', 'email', 'no_hp', 'jenis_kelamin', 'alamat', 'saldo', 'isPembeli'];
 
     public function penjual()
     {

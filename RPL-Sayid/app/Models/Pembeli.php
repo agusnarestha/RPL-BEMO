@@ -10,5 +10,5 @@ class Pembeli extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'pembeli';
-    protected $fillable = ['no_ktp','user_id'];
+    protected $fillable = ['nama', 'user_id'];
 }

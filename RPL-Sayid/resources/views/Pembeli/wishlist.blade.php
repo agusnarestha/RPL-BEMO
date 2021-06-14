@@ -9,10 +9,10 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Image</th>
+                                <th>Gambar</th>
                                 <th class="p-name">Tipe</th>
                                 <th class="p-name">Model</th>
-                                <th>Price</th>
+                                <th>Harga</th>
                                 <th><i class="ti-close"></i></th>
                             </tr>
                         </thead>
@@ -26,7 +26,7 @@
                                 <td class="cart-title first-row">
                                     <h5><a href="/infomobil/{{$pembeli['id']}}/{{$d->mobil_id}}" style="color: black;">{{$d->model}}</a></h5>
                                 </td>
-                                <td class="total-price first-row"><a href="/infomobil/{{$pembeli['id']}}/{{$d->mobil_id}}" style="color: black;">Rp.{{$d->harga}}</a></td>
+                                <td class="total-price first-row"><a href="/infomobil/{{$pembeli['id']}}/{{$d->mobil_id}}" style="color: black;">@currency($d->harga)</a></td>
                                 <td class="close-td first-row"><a href="/delwish/{{$pembeli['id']}}/{{$d->mobil_id}}" style="color: black;"><i class="ti-close"></i></a></td>
                             </tr>
                             @endforeach
@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="col-lg-4 offset-lg-4">
                         <div class="proceed-checkout">
-                            <a href="/pembeli/{{$pembeli['id']}}" class="proceed-btn">HOME</a>
+                            <a href="/pembeli/{{$pembeli['id']}}" class="proceed-btn">BERANDA</a>
                         </div>
                     </div>
                 </div>

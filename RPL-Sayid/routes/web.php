@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PenjualController;
 use App\Http\Controllers\PembeliController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,16 +23,16 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/register', [RegisterController::class, 'create']);
-Route::post('/store', [RegisterController::class, 'store']);
-
-Route::get('/login', [LoginController::class, 'index']);
-Route::post('/logins', [LoginController::class, 'login']);
+Route::get('/register', [UserController::class, 'create']);
+Route::post('/store', [UserController::class, 'store']);
+Route::post('/logins', [UserController::class, 'login']);
 
 Route::get('/mobil/{id}', [PembeliController::class, 'getMobil']);
 Route::get('/infomobil/{id}/{moid}', [PembeliController::class, 'infoMobil']);
 Route::get('/topup/{id}', [PembeliController::class, 'topup']);
+Route::get('/tarik/{id}', [PembeliController::class, 'tarik']);
 Route::post('/insertsaldo', [PembeliController::class, 'insertSaldo']);
+Route::post('/tariksaldo', [PembeliController::class, 'tarikSaldo']);
 Route::get('/checkout/{id}/{moid}', [PembeliController::class, 'checkout']);
 Route::post('/belimobil', [PembeliController::class, 'belimobil']);
 Route::get('/historyPembeli/{id}', [PembeliController::class, 'getHistory']);
@@ -46,6 +47,8 @@ Route::post('/deleteMobil', [PenjualController::class, 'deleteMobil']);
 Route::get('/editMobil/{id}/{moid}', [PenjualController::class, 'editMobil']);
 Route::post('/updateMobil', [PenjualController::class, 'updateMobil']);
 Route::get('/historyPenjual/{id}', [PenjualController::class, 'getHistory']);
+Route::get('/tarikPenjual/{id}', [PenjualController::class, 'tarik']);
+Route::post('/tariksaldoPenjual', [PenjualController::class, 'tarikSaldo']);
 
 Route::get('/mobil', [AdminController::class, 'getMobil']);
 Route::get('/history', [AdminController::class, 'getHistory']);

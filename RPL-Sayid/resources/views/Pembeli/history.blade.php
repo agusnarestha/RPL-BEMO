@@ -34,13 +34,14 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Image</th>
-                                <th class="p-name">Type</th>
-                                <th class="p-name">Brand</th>
+                                <th>Gambar</th>
+                                <th class="p-name">Tipe</th>
+                                <th class="p-name">Merek</th>
                                 <th class="p-name">Model</th>
-                                <th class="p-name">Year</th>
-                                <th class="p-name">Fuel</th>
-                                <th>Price</th>
+                                <th class="p-name">Tahun</th>
+                                <th class="p-name">Bahan Bakar</th>
+                                <th class="p-name">Penjual</th>
+                                <th>Harga</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -61,6 +62,9 @@
                                 </td>
                                 <td class="cart-title first-row">
                                     <h5>{{$d->bahan_bakar}}</h5>
+                                </td>
+                                <td class="cart-title first-row">
+                                    <h5>{{$d->nama}}</h5>
                                 </td>
                                 <td class="total-price first-row">Rp.{{$d->harga}}</td>
                             </tr>

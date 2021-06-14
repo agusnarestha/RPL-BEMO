@@ -17,6 +17,15 @@
     {{ session('updateMobil')}}
 </div>
 @endif
+@if(session('tarikSaldo'))
+<div class="alert alert-success">
+    {{ session('tarikSaldo')}}
+</div>
+@elseif(session('gagalSaldo'))
+<div class="alert alert-danger">
+    {{ session('gagalSaldo')}}
+</div>
+@endif
 <table class="mt-3" style="width:100%">
     <tr>
         <th>Gambar</th>

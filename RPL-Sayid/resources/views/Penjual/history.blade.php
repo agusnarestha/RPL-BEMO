@@ -3,13 +3,14 @@
 @section('content')
 <table style="width:100%">
     <tr>
-        <th>gambar</th>
-        <th>tipe_mobil</th>
-        <th>merek</th>
-        <th>model</th>
-        <th>tahun</th>
-        <th>bahan_bakar</th>
-        <th>harga</th>
+        <th>Gambar</th>
+        <th>Tipe</th>
+        <th>Merek</th>
+        <th>Model</th>
+        <th>Tahun</th>
+        <th>Bahan Bakar</th>
+        <th>Pembeli</th>
+        <th>Harga</th>
     </tr>
     @foreach ($history as $m)
     <tr>
@@ -19,6 +20,7 @@
         <td>{{$m->model}}</td>
         <td>{{$m->tahun}}</td>
         <td>{{$m->bahan_bakar}}</td>
+        <td>{{$m->nama}}</td>
         <td>@currency($m['harga'])</td>
     </tr>
     @endforeach

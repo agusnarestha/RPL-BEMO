@@ -13,7 +13,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="no_ktp">No KTP</label>
-                            <input type="text" class="form-control" name="no_ktp" id="no_ktp" placeholder="Masukkan No KTP">
+                            <input type="text" class="form-control" name="no_ktp" id="no_ktp">
                             @error('no_ktp')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -22,7 +22,7 @@
                         </div>
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan Username">
+                            <input type="text" class="form-control" name="username" id="username">
                             @error('username')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -31,7 +31,7 @@
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Masukkan Password">
+                            <input type="password" class="form-control" name="password" id="password">
                             @error('password')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group">
                             <label for="judul">Email</label>
-                            <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan Email">
+                            <input type="text" class="form-control" name="email" id="email">
                             @error('email')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -49,7 +49,7 @@
                         </div>
                         <div class="form-group">
                             <label for="no_hp">No Hp</label>
-                            <input type="text" class="form-control" name="no_hp" id="no_hp" placeholder="Masukkan No HP">
+                            <input type="text" class="form-control" name="no_hp" id="no_hp">
                             @error('no_hp')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -58,7 +58,7 @@
                         </div>
                         <div class="form-group">
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan Nama">
+                            <input type="text" class="form-control" name="nama" id="nama">
                             @error('nama')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -79,7 +79,7 @@
                         </div>
                         <div class="form-group">
                             <label for="alamat">Alamat</label>
-                            <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Masukkan Alamat">
+                            <input type="text" class="form-control" name="alamat" id="alamat">
                             @error('alamat')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -101,7 +101,7 @@
                         <button type="submit" class="site-btn register-btn">REGISTER</button>
                     </form>
                     <div class="switch-login">
-                        <a href="/" class="or-login">Or Login</a>
+                        <a href="/" class="or-login"> Login</a>
                     </div>
                 </div>
             </div>

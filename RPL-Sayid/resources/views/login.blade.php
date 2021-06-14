@@ -1,4 +1,5 @@
 @extends('master')
+
 @section('content')
 <!-- Register Section Begin -->
 <div class="register-login-section spad">
@@ -16,7 +17,7 @@
                             </div>
                             @endif
                             <label for="username">Username</label>
-                            <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan Username">
+                            <input type="text" class="form-control" name="username" id="username">
                             @error('username')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -25,17 +26,17 @@
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Masukkan Password">
+                            <input type="password" class="form-control" name="password" id="password">
                             @error('password')
                             <div class="alert alert-danger">
                                 {{ $message }}
                             </div>
                             @enderror
                         </div>
-                        <button type="submit" class="site-btn login-btn">Sign In</button>
+                        <button type="submit" class="site-btn login-btn">Login</button>
                     </form>
                     <div class="switch-login">
-                        <a href="/register" class="or-login">Or Create An Account</a>
+                        <a href="/register" class="or-login">Buat Akun</a>
                     </div>
                 </div>
             </div>

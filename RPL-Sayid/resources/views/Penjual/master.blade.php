@@ -29,7 +29,7 @@
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item mr-3">
-          <a href=""><button type="button" class="btn btn-outline-dark"><i class="fa fa-user ml-3" aria-hidden="true"></i>{{$user['nama']}}</button></a>
+          <a href=""><button type="button" class="btn btn-outline-dark"><i class="fa fa-user" aria-hidden="true"></i> {{$user['nama']}}</button></a>
         </li>
         <li class="nav-item">
           <a type="button" class="btn btn-outline-danger" href="/">
@@ -71,19 +71,28 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ url('/historyPenjual/'.$penjual['id']) }}" class="nav-link">
-                <i class="nav-icon fas fa-file"></i>
+              <a href="{{ url('/inputMobil/'.$penjual['id']) }}" class="nav-link">
+                <i class="nav-icon far fa-edit"></i>
                 <p>
-                  History Transaksi
+                  Buat Mobil
                   <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ url('/inputMobil/'.$penjual['id']) }}" class="nav-link">
+              <a href="{{ url('/tarikPenjual/'.$penjual['id']) }}" class="nav-link">
                 <i class="nav-icon far fa-edit"></i>
                 <p>
-                  Buat Mobil
+                  Tarik Saldo
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ url('/historyPenjual/'.$penjual['id']) }}" class="nav-link">
+                <i class="nav-icon fas fa-file"></i>
+                <p>
+                  History Transaksi
                   <i class="fas fa-angle-left right"></i>
                 </p>
               </a>

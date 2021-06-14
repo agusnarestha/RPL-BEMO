@@ -75,9 +75,8 @@ class PembeliController extends Controller
     public function belimobil(Request $request)
     {
         $mobil = Mobil::find($request->mobil_id)->first()->getOriginal();
-        $pembeli = Pembeli::find($request->pembeli_id)->first()->getOriginal();
-        $penjual = Penjual::find($mobil['penjual_id'])->first()->getOriginal();
-
+        $pembeli = Pembeli::where('id', $request->pembeli_id)->first()->getOriginal();
+        $penjual = Penjual::where('id', $mobil['penjual_id'])->first()->getOriginal();
         $flight = User::find($pembeli['user_id']);
         if ($flight->saldo < $mobil['harga']) {
             return redirect()->action(
@@ -117,7 +116,7 @@ class PembeliController extends Controller
     {
         $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
         $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
-        $history = HistoryTransaksi::where('pembeli_id', $id)->get();
+        $history = HistoryTransaksi::join('penjual', 'historytransaksi.penjual_id', '=', 'penjual.id')->where('pembeli_id', $id)->get();
         $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
         return view('Pembeli.history', compact('user', 'pembeli', 'history', 'wishlist'));
     }
@@ -141,7 +140,7 @@ class PembeliController extends Controller
         $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
         $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
         $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
-        $data = Mobil::join('wishlist', 'mobil.id', '=', 'wishlist.mobil_id')->get();
+        $data = Mobil::join('wishlist', 'mobil.id', '=', 'wishlist.mobil_id')->where('pembeli_id', $pembeli['id'])->get();
         return view('Pembeli.wishlist', compact('user', 'pembeli', 'data', 'wishlist'));
     }
 
@@ -161,5 +160,32 @@ class PembeliController extends Controller
         $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
         $mobil = Mobil::where('tipe_mobil', $tipe)->get();
         return view('Pembeli.list', compact('user', 'pembeli', 'mobil', 'wishlist'));
+    }
+
+    public function tarik($id)
+    {
+        $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
+        $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
+        $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
+        return view('Pembeli.tarik', compact('user', 'pembeli', 'wishlist'));
+    }
+
+    public function tarikSaldo(Request $request)
+    {
+        $pembeli = Pembeli::where('user_id', $request->id)->first()->getOriginal();
+        $flight = User::find($request->id);
+        if ($flight->saldo < $request->saldo) {
+            return redirect()->action(
+                [PembeliController::class, 'CookiesPembeli'],
+                ['id' => $pembeli['id']]
+            )->with('gagalSaldo', 'Saldo Kurang');
+        } else {
+            $flight->saldo = $flight->saldo - $request->saldo;
+            $flight->save();
+            return redirect()->action(
+                [PembeliController::class, 'CookiesPembeli'],
+                ['id' => $pembeli['id']]
+            )->with('tarikSaldo', 'Saldo Berhasil Ditarik');
+        }
     }
 }
