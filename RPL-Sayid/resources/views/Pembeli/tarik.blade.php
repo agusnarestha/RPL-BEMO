@@ -22,7 +22,7 @@
                             @enderror
                         </div>
                         <input type="hidden" value="{{$user['id']}}" name="id" id="id">
-                        <button type="submit" class="site-btn register-btn">Top Up</button>
+                        <button type="submit" class="site-btn register-btn">Tarik Saldo</button>
                     </form>
                 </div>
             </div>

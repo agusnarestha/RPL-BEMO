@@ -19,15 +19,15 @@
                     <h3>{{$mobil['model']}}</h3>
                 </div>
                 <div class="pd-desc">
-                    <p>{{$penjual['nama']}}</p>
+                    <p><strong>Penjual :</strong> {{$penjual['nama']}}</p>
                     <h4>@currency($mobil['harga'])</h4>
                 </div>
                 <ul class="pd-tags">
-                    <li>{{$mobil['tipe_mobil']}}</li>
-                    <li>{{$mobil['bahan_bakar']}}</li>
+                    <li><strong>Tipe :</strong> {{$mobil['tipe_mobil']}}</li>
+                    <li><strong>Bahan Bakar :</strong> {{$mobil['bahan_bakar']}}</li>
                 </ul>
                 <div class="filter-widget">
-                    <a href="{{ url('/checkout/'.$pembeli['id'].'/'.$mobil['id']) }}" class="filter-btn">Buy Now</a>
+                    <a href="{{ url('/checkout/'.$pembeli['id'].'/'.$mobil['id']) }}" class="filter-btn">Beli Sekarang</a>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="tab-item">
             <ul class="nav" role="tablist">
                 <li>
-                    <a class="active" data-toggle="tab" href="#tab-1" role="tab">DESCRIPTION</a>
+                    <a class="active" data-toggle="tab" href="#tab-1" role="tab">DESKRIPSI</a>
                 </li>
             </ul>
         </div>
@@ -46,7 +46,7 @@
                     <div class="product-content">
                         <div class="row">
                             <div class="col-lg-7">
-                                <h5>Description</h5>
+                                <h5>Deskripsi</h5>
                                 <p>{{$mobil['desc']}}</p>
                             </div>
                             <div class="col-lg-5">

@@ -6,19 +6,19 @@
     <div class="container">
         <form action="/belimobil" class="checkout-form" method="post">
             @csrf
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="place-order">
-                        <h4>Your Order</h4>
+                        <h4>Pesanan Anda</h4>
                         <div class="order-total">
                             <ul class="order-table">
-                                <li>Product <span>Total</span></li>
+                                <li>Produk <span>Total</span></li>
                                 <li class="fw-normal">{{$mobil['model']}}<span>@currency($mobil['harga'])</span></li>
                             </ul>
                             <div class="order-btn">
                                 <input type="hidden" value="{{$mobil['id']}}" name="mobil_id" id="mobil_id">
                                 <input type="hidden" value="{{$pembeli['id']}}" name="pembeli_id" id="pembeli_id">
-                                <button type="submit" class="site-btn place-btn">Place Order</button>
+                                <button type="submit" class="site-btn place-btn">Beli</button>
                             </div>
                         </div>
                     </div>

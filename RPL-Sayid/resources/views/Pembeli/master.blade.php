@@ -78,6 +78,11 @@
                 {{ session('gagalSaldo')}}
             </div>
             @endif
+            @if(session('beliMobil'))
+            <div class="alert alert-success">
+                {{ session('beliMobil')}}
+            </div>
+            @endif
         </div>
         <div class="nav-item">
             <div class="container">

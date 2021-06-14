@@ -75,9 +75,8 @@ class PembeliController extends Controller
     public function belimobil(Request $request)
     {
         $mobil = Mobil::find($request->mobil_id)->first()->getOriginal();
-        $pembeli = Pembeli::find($request->pembeli_id)->first()->getOriginal();
-        $penjual = Penjual::find($mobil['penjual_id'])->first()->getOriginal();
-
+        $pembeli = Pembeli::where('id', $request->pembeli_id)->first()->getOriginal();
+        $penjual = Penjual::where('id', $mobil['penjual_id'])->first()->getOriginal();
         $flight = User::find($pembeli['user_id']);
         if ($flight->saldo < $mobil['harga']) {
             return redirect()->action(
@@ -141,7 +140,7 @@ class PembeliController extends Controller
         $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
         $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
         $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
-        $data = Mobil::join('wishlist', 'mobil.id', '=', 'wishlist.mobil_id')->get();
+        $data = Mobil::join('wishlist', 'mobil.id', '=', 'wishlist.mobil_id')->where('pembeli_id', $pembeli['id'])->get();
         return view('Pembeli.wishlist', compact('user', 'pembeli', 'data', 'wishlist'));
     }
 

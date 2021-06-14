@@ -13,7 +13,7 @@
                             <a href="{{ url('/wishlist/'.$pembeli['id'].'/'.$m->id) }}" style="color:black;"><i class="icon_heart_alt"></i></a>
                         </div>
                         <ul>
-                            <li class="quick-view"><a href="{{ url('/infomobil/'.$pembeli['id'].'/'.$m->id) }}">More</a></li>
+                            <li class="quick-view"><a href="{{ url('/infomobil/'.$pembeli['id'].'/'.$m->id) }}">Telusuri</a></li>
                         </ul>
                     </div>
                     <div class="pi-text">

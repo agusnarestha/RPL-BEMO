@@ -47,6 +47,8 @@ Route::post('/deleteMobil', [PenjualController::class, 'deleteMobil']);
 Route::get('/editMobil/{id}/{moid}', [PenjualController::class, 'editMobil']);
 Route::post('/updateMobil', [PenjualController::class, 'updateMobil']);
 Route::get('/historyPenjual/{id}', [PenjualController::class, 'getHistory']);
+Route::get('/tarikPenjual/{id}', [PenjualController::class, 'tarik']);
+Route::post('/tariksaldoPenjual', [PenjualController::class, 'tarikSaldo']);
 
 Route::get('/mobil', [AdminController::class, 'getMobil']);
 Route::get('/history', [AdminController::class, 'getHistory']);
