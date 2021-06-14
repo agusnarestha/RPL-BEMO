@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PenjualController;
 use App\Http\Controllers\PembeliController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,5 +46,9 @@ Route::get('/editMobil/{id}/{moid}', [PenjualController::class, 'editMobil']);
 Route::post('/updateMobil', [PenjualController::class, 'updateMobil']);
 Route::get('/historyPenjual/{id}', [PenjualController::class, 'getHistory']);
 
+Route::get('/mobil', [AdminController::class, 'getMobil']);
+Route::get('/history', [AdminController::class, 'getHistory']);
+
 Route::get('/penjual/{id}', [PenjualController::class, 'CookiesPenjual']);
 Route::get('/pembeli/{id}', [PembeliController::class, 'CookiesPembeli']);
+Route::get('/admins', [AdminController::class, 'CookiesAdmin']);
