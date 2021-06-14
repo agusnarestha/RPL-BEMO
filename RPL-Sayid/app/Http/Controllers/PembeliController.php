@@ -115,7 +115,8 @@ class PembeliController extends Controller
         $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
         $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
         $history = HistoryTransaksi::where('pembeli_id', $id)->get();
-        return view('Pembeli.history', compact('user', 'pembeli', 'history'));
+        $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
+        return view('Pembeli.history', compact('user', 'pembeli', 'history', 'wishlist'));
     }
 
     public function addWishlist($id, $moid)
@@ -131,6 +132,24 @@ class PembeliController extends Controller
         }
         return redirect()->action(
             [PembeliController::class, 'getMobil'],
+            ['id' => $id]
+        );
+    }
+
+    public function getWishlist($id)
+    {
+        $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
+        $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
+        $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
+        $data = Mobil::join('wishlist', 'mobil.id', '=', 'wishlist.mobil_id')->get();
+        return view('Pembeli.wishlist', compact('user', 'pembeli', 'data', 'wishlist'));
+    }
+
+    public function delWishlist($id, $moid)
+    {
+        Wishlist::where('pembeli_id', $id)->where('mobil_id', $moid)->first()->delete();
+        return redirect()->action(
+            [PembeliController::class, 'getWishlist'],
             ['id' => $id]
         );
     }
