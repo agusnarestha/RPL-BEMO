@@ -11,23 +11,23 @@
         <th>bahan_bakar</th>
         <th>harga</th>
     </tr>
-    @foreach ($mobil as $m)
+    @foreach ($history as $d)
     <tr>
-        <th><img src="/img/{{$m->gambar}}" alt="" style="height: 50px; width: 50px;"></th>
-        <th>{{$m->tipe_mobil}}</th>
-        <th>{{$m->merek}}</th>
-        <th>{{$m->model}}</th>
-        <th>{{$m->tahun}}</th>
-        <th>{{$m->bahan_bakar}}</th>
-        <th>{{$m->harga}}</th>
+        <th><img src="/img/{{$d['gambar']}}" alt="" style="height: 50px; width: 50px;"></th>
+        <th>{{$d['tipe_mobil']}}</th>
+        <th>{{$d['merek']}}</th>
+        <th>{{$d['model']}}</th>
+        <th>{{$d['tahun']}}</th>
+        <th>{{$d['bahan_bakar']}}</th>
+        <th>{{$d['harga']}}</th>
         <th>
-            <form action="{{ url('/editMobil/'.$penjual['id'].'/'.$m->id) }}">
+            <form action="">
                 <button class="btn btn-secondary">Edit</button>
             </form>
-            <form action="/deleteMobil" method="post">
+            <form action="" method="post">
                 @csrf
-                <input type="hidden" name="penjual_id" id="penjual_id" value="{{$penjual['id']}}">
-                <input type="hidden" name="mobil_id" id="mobil_id" value="{{$m->id}}">
+                <input type="hidden" name="penjual_id" id="penjual_id" value="">
+                <input type="hidden" name="mobil_id" id="mobil_id" value="">
                 <button class="btn btn-danger">Delete</button>
             </form>
         </th>

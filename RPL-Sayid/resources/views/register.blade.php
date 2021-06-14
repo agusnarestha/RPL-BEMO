@@ -101,7 +101,7 @@
                         <button type="submit" class="site-btn register-btn">REGISTER</button>
                     </form>
                     <div class="switch-login">
-                        <a href="./login.html" class="or-login">Or Login</a>
+                        <a href="/" class="or-login">Or Login</a>
                     </div>
                 </div>
             </div>

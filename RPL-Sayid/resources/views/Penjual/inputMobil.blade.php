@@ -7,7 +7,11 @@
         @csrf
         <div class="form-group">
             <label for="tipe_mobil">Tipe Mobil</label>
-            <input type="text" class="form-control" name="tipe_mobil" id="tipe_mobil" placeholder="Masukkan Tipe Mobil">
+            <select id="tipe_mobil" class="form-control" name="tipe_mobil">
+                <option>SUV</option>
+                <option>Sedan</option>
+                <option>LCGC</option>
+            </select>
             @error('tipe_mobil')
             <div class="alert alert-danger">
                 {{ $message }}
@@ -43,7 +47,10 @@
         </div>
         <div class="form-group">
             <label for="bahan_bakar">Bahan Bakar</label>
-            <input type="text" class="form-control" name="bahan_bakar" id="bahan_bakar" placeholder="Masukkan Bahan Bakar">
+            <select id="bahan_bakar" class="form-control" name="bahan_bakar">
+                <option>Bensin</option>
+                <option>Diesel</option>
+            </select>
             @error('bahan_bakar')
             <div class="alert alert-danger">
                 {{ $message }}

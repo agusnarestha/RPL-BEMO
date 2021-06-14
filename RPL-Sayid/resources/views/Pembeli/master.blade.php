@@ -77,7 +77,6 @@
                         <li><a href="{{ url('/mobil/'.$pembeli['id']) }}">Shop</a></li>
                         <li><a href="{{ url('/topup/'.$pembeli['id']) }}">Top Up</a></li>
                         <li><a href="{{ url('/historyPembeli/'.$pembeli['id']) }}">History</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
                     </ul>
                 </nav>
             </div>

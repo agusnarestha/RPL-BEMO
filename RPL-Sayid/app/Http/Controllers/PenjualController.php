@@ -24,32 +24,35 @@ class PenjualController extends Controller
     {
         $penjual = Penjual::where('id', $id)->first()->getOriginal();
         $user = User::where('id', $penjual['user_id'])->first()->getOriginal();
-        return view('Penjual.inputMobil', compact('user','penjual'));
+        return view('Penjual.inputMobil', compact('user', 'penjual'));
     }
 
     public function insertMobil(Request $request)
     {
-        $this->validate($request, [
-            'tipe_mobil' => 'required',
-            'merek' => 'required',
-            'model' => 'required',
-            'harga' => 'required',
-            'bahan_bakar' => 'required',
-            'desc' => 'required',
-            'tahun' => 'required',
-            'gambar' => 'required',
-        ],
-        [
-            'tipe_mobil.required' => 'Tipe Mobil Tidak Boleh Kosong !',
-            'merek.required' => 'Merek Tidak Boleh Kosong !',
-            'model.required' => 'Model Tidak Boleh Kosong !',
-            'harga.required' => 'Harga Tidak Boleh Kosong !',
-            'bahan_bakar.required' => 'Bahan Bakar Tidak Boleh Kosong !',
-            'no_hp.required' => 'No HP Tidak Boleh Kosong !',
-            'desc.required' => 'Deskripsi Tidak Boleh Kosong !',
-            'tahun.required' => 'Tahun Tidak Boleh Kosong !',
-            'gambar.required' => 'Gambar Tidak Boleh Kosong !',
-        ]);
+        $this->validate(
+            $request,
+            [
+                'tipe_mobil' => 'required',
+                'merek' => 'required',
+                'model' => 'required',
+                'harga' => 'required',
+                'bahan_bakar' => 'required',
+                'desc' => 'required',
+                'tahun' => 'required',
+                'gambar' => 'required',
+            ],
+            [
+                'tipe_mobil.required' => 'Tipe Mobil Tidak Boleh Kosong !',
+                'merek.required' => 'Merek Tidak Boleh Kosong !',
+                'model.required' => 'Model Tidak Boleh Kosong !',
+                'harga.required' => 'Harga Tidak Boleh Kosong !',
+                'bahan_bakar.required' => 'Bahan Bakar Tidak Boleh Kosong !',
+                'no_hp.required' => 'No HP Tidak Boleh Kosong !',
+                'desc.required' => 'Deskripsi Tidak Boleh Kosong !',
+                'tahun.required' => 'Tahun Tidak Boleh Kosong !',
+                'gambar.required' => 'Gambar Tidak Boleh Kosong !',
+            ]
+        );
 
         $gambar = $request->gambar;
         $name_img = time() . ' - ' . $gambar->getClientOriginalName();
@@ -68,7 +71,7 @@ class PenjualController extends Controller
         return redirect()->action(
             [PenjualController::class, 'CookiesPenjual'],
             ['id' => $request->penjual_id]
-        )->with('addMobil','Mobil Berhasil Ditambahkan');
+        )->with('addMobil', 'Mobil Berhasil Ditambahkan');
     }
 
     public function deleteMobil(Request $request)
@@ -77,7 +80,7 @@ class PenjualController extends Controller
         return redirect()->action(
             [PenjualController::class, 'CookiesPenjual'],
             ['id' => $request->penjual_id]
-        )->with('deleteMobil','Mobil Berhasil Dihapus');
+        )->with('deleteMobil', 'Mobil Berhasil Dihapus');
     }
 
     public function editMobil($id, $moid)
@@ -85,12 +88,12 @@ class PenjualController extends Controller
         $mobil = Mobil::where('id', $moid)->first()->getOriginal();
         $penjual = Penjual::find($id)->first()->getOriginal();
         $user = User::where('id', $penjual['user_id'])->first()->getOriginal();
-        return view('Penjual.editMobil', compact('penjual', 'mobil','user'));
+        return view('Penjual.editMobil', compact('penjual', 'mobil', 'user'));
     }
 
     public function updateMobil(Request $request)
     {
-        $gambar = $request->foto;
+        $gambar = $request->gambar;
         $mobil = Mobil::where('id', $request->mobil_id);
         if ($gambar != NULL) {
             $name_img = time() . ' - ' . $gambar->getClientOriginalName();
@@ -119,7 +122,7 @@ class PenjualController extends Controller
         return redirect()->action(
             [PenjualController::class, 'CookiesPenjual'],
             ['id' => $request->penjual_id]
-        )->with('updateMobil','Mobil Berhasil Diupdate');
+        )->with('updateMobil', 'Mobil Berhasil Diupdate');
     }
 
     public function getHistory($id)

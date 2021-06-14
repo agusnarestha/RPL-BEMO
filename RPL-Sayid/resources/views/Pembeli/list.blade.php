@@ -18,7 +18,7 @@
                     </div>
                     <div class="pi-text">
                         <div class="catagory-name">{{$m->tipe_mobil}}</div>
-                        <a href="#">
+                        <a href="{{ url('/infomobil/'.$pembeli['id'].'/'.$m->id) }}">
                             <h5>{{$m->model}}</h5>
                         </a>
                         <div class="product-price">

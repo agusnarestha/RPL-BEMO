@@ -9,9 +9,9 @@
                 <div class="filter-widget">
                     <h4 class="fw-title">Tipe</h4>
                     <ul class="filter-catagories">
-                        <li><a href="#">SUV</a></li>
-                        <li><a href="#">Sedan</a></li>
-                        <li><a href="#">LCGC</a></li>
+                        <li><a href="/mobil/{{$pembeli['id']}}/SUV">SUV</a></li>
+                        <li><a href="/mobil/{{$pembeli['id']}}/Sedan">Sedan</a></li>
+                        <li><a href="/mobil/{{$pembeli['id']}}/LCGC">LCGC</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,13 +1,16 @@
 @extends('Penjual.master')
 
 @section('content')
-
 <div class="container">
     <form action="/updateMobil" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-            <label for="tipe_mobil">tipe_mobil</label>
-            <input type="text" class="form-control" name="tipe_mobil" id="tipe_mobil" value="{{$mobil['tipe_mobil']}}">
+            <label for="tipe_mobil">Tipe Mobil</label>
+            <select id="tipe_mobil" class="form-control" name="tipe_mobil" value="{{$mobil['tipe_mobil']}}">
+                <option>SUV</option>
+                <option>Sedan</option>
+                <option>LCGC</option>
+            </select>
             @error('tipe_mobil')
             <div class="alert alert-danger">
                 {{ $message }}
@@ -15,7 +18,7 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="merek">merek</label>
+            <label for="merek">Merek</label>
             <input type="text" class="form-control" name="merek" id="merek" value="{{$mobil['merek']}}">
             @error('merek')
             <div class="alert alert-danger">
@@ -24,7 +27,7 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="model">model</label>
+            <label for="model">Model</label>
             <input type="text" class="form-control" name="model" id="model" value="{{$mobil['model']}}">
             @error('model')
             <div class="alert alert-danger">
@@ -33,7 +36,7 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="tahun">tahun</label>
+            <label for="tahun">Tahun</label>
             <input type="text" class="form-control" name="tahun" id="tahun" value="{{$mobil['tahun']}}">
             @error('tahun')
             <div class="alert alert-danger">
@@ -42,8 +45,11 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="bahan_bakar">bahan_bakar</label>
-            <input type="text" class="form-control" name="bahan_bakar" id="bahan_bakar" value="{{$mobil['bahan_bakar']}}">
+            <label for="bahan_bakar">Bahan Bakar</label>
+            <select id="bahan_bakar" class="form-control" name="bahan_bakar" value="{{$mobil['bahan_bakar']}}">
+                <option>Bensin</option>
+                <option>Diesel</option>
+            </select>
             @error('bahan_bakar')
             <div class="alert alert-danger">
                 {{ $message }}
@@ -51,8 +57,8 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="desc">desc</label>
-            <input type="text" class="form-control" name="desc" id="desc" value="{{$mobil['desc']}}">
+            <label for="desc">Deskripsi</label>
+            <input type="text" class="form-control" name="desc" id="desc" value="{{$mobil['desc']}}"></input>
             @error('desc')
             <div class="alert alert-danger">
                 {{ $message }}
@@ -60,7 +66,7 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="gambar">gambar</label>
+            <label for="gambar">Gambar</label>
             <input type="file" class="form-control" name="gambar" id="gambar">
             @error('gambar')
             <div class="alert alert-danger">
@@ -69,7 +75,7 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="harga">harga</label>
+            <label for="harga">Harga</label>
             <input type="text" class="form-control" name="harga" id="harga" value="{{$mobil['harga']}}">
             @error('harga')
             <div class="alert alert-danger">

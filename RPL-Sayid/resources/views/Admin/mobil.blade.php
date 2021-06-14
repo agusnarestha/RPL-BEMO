@@ -21,13 +21,13 @@
         <th>{{$m->bahan_bakar}}</th>
         <th>{{$m->harga}}</th>
         <th>
-            <form action="{{ url('/editMobil/'.$penjual['id'].'/'.$m->id) }}">
+            <form action="">
                 <button class="btn btn-secondary">Edit</button>
             </form>
             <form action="/deleteMobil" method="post">
                 @csrf
-                <input type="hidden" name="penjual_id" id="penjual_id" value="{{$penjual['id']}}">
-                <input type="hidden" name="mobil_id" id="mobil_id" value="{{$m->id}}">
+                <input type="hidden" name="penjual_id" id="penjual_id" value="">
+                <input type="hidden" name="mobil_id" id="mobil_id" value="">
                 <button class="btn btn-danger">Delete</button>
             </form>
         </th>

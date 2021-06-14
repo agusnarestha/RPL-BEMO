@@ -17,7 +17,10 @@ class PembeliController extends Controller
         $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
         $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
         $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
-        return view('Pembeli.index', compact('user', 'pembeli', 'wishlist'));
+        $suv = Mobil::where('tipe_mobil', 'SUV')->get();
+        $sedan = Mobil::where('tipe_mobil', 'Sedan')->get();
+        $lcgc = Mobil::where('tipe_mobil', 'LCGC')->get();
+        return view('Pembeli.index', compact('user', 'pembeli', 'wishlist', 'suv', 'sedan', 'lcgc'));
     }
 
     public function getMobil($id)
@@ -57,7 +60,7 @@ class PembeliController extends Controller
         return redirect()->action(
             [PembeliController::class, 'CookiesPembeli'],
             ['id' => $pembeli['id']]
-        )->with('insertSaldo','Saldo Berhasil Ditambahkan');
+        )->with('insertSaldo', 'Saldo Berhasil Ditambahkan');
     }
 
     public function checkout($id, $moid)
@@ -80,7 +83,7 @@ class PembeliController extends Controller
             return redirect()->action(
                 [PembeliController::class, 'topup'],
                 ['id' => $pembeli['id']]
-            )->with('kurangSaldo','Saldo Anda Tidak Cukup !!!');
+            )->with('kurangSaldo', 'Saldo Anda Tidak Cukup !!!');
         } else {
             $flight->saldo = $flight->saldo - $mobil['harga'];
             $flight->save();
@@ -107,7 +110,7 @@ class PembeliController extends Controller
         return redirect()->action(
             [PembeliController::class, 'CookiesPembeli'],
             ['id' => $request->pembeli_id]
-        )->with('beliMobil','Mobil Berhasil Dibeli');
+        )->with('beliMobil', 'Mobil Berhasil Dibeli');
     }
 
     public function getHistory($id)
@@ -130,10 +133,7 @@ class PembeliController extends Controller
         } else {
             $x->delete();
         }
-        return redirect()->action(
-            [PembeliController::class, 'getMobil'],
-            ['id' => $id]
-        );
+        return back();
     }
 
     public function getWishlist($id)
@@ -152,5 +152,14 @@ class PembeliController extends Controller
             [PembeliController::class, 'getWishlist'],
             ['id' => $id]
         );
+    }
+
+    public function filterCar($id, $tipe)
+    {
+        $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
+        $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
+        $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
+        $mobil = Mobil::where('tipe_mobil', $tipe)->get();
+        return view('Pembeli.list', compact('user', 'pembeli', 'mobil', 'wishlist'));
     }
 }
