@@ -24,8 +24,7 @@ class AdminController extends Controller
 
     public function getHistory()
     {
-        $data = Mobil::join('wishlist', 'mobil.id', '=', 'wishlist.mobil_id')->get();
-        $data = Mobil::join('wishlist', 'mobil.id', '=', 'wishlist.mobil_id')->get();
+        $history = HistoryTransaksi::get();
         return view('Admin.history', compact('history'));
     }
 }

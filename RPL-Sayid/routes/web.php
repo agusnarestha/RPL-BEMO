@@ -19,7 +19,7 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('login');
 });
 
 Route::get('/register', [RegisterController::class, 'create']);
@@ -38,6 +38,7 @@ Route::get('/historyPembeli/{id}', [PembeliController::class, 'getHistory']);
 Route::get('/wishlist/{id}/{moid}', [PembeliController::class, 'addWishlist']);
 Route::get('/wish/{id}', [PembeliController::class, 'getWishlist']);
 Route::get('/delwish/{id}/{wid}', [PembeliController::class, 'delWishlist']);
+Route::get('/mobil/{id}/{tipe}', [PembeliController::class, 'filterCar']);
 
 Route::get('/inputMobil/{id}', [PenjualController::class, 'inputMobil']);
 Route::post('/insertMobil', [PenjualController::class, 'insertMobil']);
