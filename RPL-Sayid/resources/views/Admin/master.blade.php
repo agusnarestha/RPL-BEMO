@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard Penjual</title>
+    <title>Dashboard Admin</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -49,9 +49,9 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="{{ url('/penjual/'.$penjual['id']) }}" class="brand-link">
+            <a href="" class="brand-link">
                 <img src="images/logo.png" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Dasboard Penjual</span>
+                <span class="brand-text font-weight-light">Dasboard Admin</span>
             </a>
 
             <!-- Sidebar -->
@@ -71,19 +71,19 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/history/'.$penjual['id']) }}" class="nav-link">
-                                <i class="nav-icon fas fa-file"></i>
+                            <a href="/mobil" class="nav-link">
+                                <i class="nav-icon far fa-edit"></i>
                                 <p>
-                                    History Transaksi
+                                    Mobil
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/inputMobil/'.$penjual['id']) }}" class="nav-link">
+                            <a href="" class="nav-link">
                                 <i class="nav-icon far fa-edit"></i>
                                 <p>
-                                    Buat Mobil
+                                    History Transaksi
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
