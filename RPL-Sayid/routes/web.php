@@ -55,4 +55,8 @@ Route::get('/history', [AdminController::class, 'getHistory']);
 
 Route::get('/penjual/{id}', [PenjualController::class, 'CookiesPenjual']);
 Route::get('/pembeli/{id}', [PembeliController::class, 'CookiesPembeli']);
+
 Route::get('/admins', [AdminController::class, 'CookiesAdmin']);
+Route::get('/editUser/{id}/', [AdminController::class, 'editUser']);
+Route::post('/updateUser/{id}', [AdminController::class, 'updateUser']);
+Route::post('/deleteUser/', [AdminController::class, 'deleteUser']);

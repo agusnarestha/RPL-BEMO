@@ -29,7 +29,7 @@
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item mr-3">
-                    <a href=""><button type="button" class="btn btn-outline-dark"><i class="fa fa-user ml-3" aria-hidden="true"></i></button></a>
+                    <a href=""><button type="button" class="btn btn-outline-dark"><i class="fa fa-user" aria-hidden="true"></i> Admin</button></a>
                 </li>
                 <li class="nav-item">
                     <a type="button" class="btn btn-outline-danger" href="/">
@@ -62,7 +62,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="/" class="nav-link">
+                            <a href="/admins" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard

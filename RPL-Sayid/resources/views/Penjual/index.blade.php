@@ -26,6 +26,46 @@
     {{ session('gagalSaldo')}}
 </div>
 @endif
+<div class="row mt-3">
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="info-box">
+        <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-car"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Jumlah Mobil</span>
+          <span class="info-box-number">
+            {{$countmobil}}
+            <small></small>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box">
+          <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-comment-dollar"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Jumlah Transaksi</span>
+            <span class="info-box-number">
+              {{$counttransaksi}}
+              <small></small>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box">
+          <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-dollar-sign"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Jumlah Saldo</span>
+            <span class="info-box-number">
+              @currency($user['saldo'])
+              <small></small>
+            </span>
+          </div>
+        </div>
+      </div>
+</div>
+
+
 <table class="mt-3" style="width:100%">
     <tr>
         <th>Gambar</th>
@@ -49,6 +89,8 @@
             <form action="{{ url('/editMobil/'.$penjual['id'].'/'.$m->id) }}">
                 <button class="btn btn-secondary">Edit</button>
             </form>
+        </td>
+        <td>
             <form action="/deleteMobil" method="post">
                 @csrf
                 <input type="hidden" name="penjual_id" id="penjual_id" value="{{$penjual['id']}}">

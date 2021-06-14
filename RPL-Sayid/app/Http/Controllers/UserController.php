@@ -31,7 +31,7 @@ class UserController extends Controller
 
         $user = User::where('username', $request->username)->where('password', $request->password)->first();
         if ($user == NULL) {
-            return redirect('login')->with('faillogin', 'Akun tidak ditemukan');
+            return redirect('/')->with('faillogin', 'Akun tidak ditemukan');
         } else {
             $user = $user->getOriginal();
             if ($user['isPembeli'] == TRUE) {

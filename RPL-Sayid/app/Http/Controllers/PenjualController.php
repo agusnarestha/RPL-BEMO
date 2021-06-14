@@ -17,7 +17,9 @@ class PenjualController extends Controller
         $penjual = Penjual::where('id', $id)->first()->getOriginal();
         $user = User::where('id', $penjual['user_id'])->first()->getOriginal();
         $mobil = Mobil::where('penjual_id', $id)->get();
-        return view('Penjual.index', compact('user', 'penjual', 'mobil'));
+        $countmobil = Mobil::where('penjual_id',$id)->count();
+        $counttransaksi = HistoryTransaksi::where('penjual_id',$id)->count();
+        return view('Penjual.index', compact('user', 'penjual', 'mobil','countmobil','counttransaksi'));
     }
 
     public function inputMobil($id)
@@ -86,7 +88,7 @@ class PenjualController extends Controller
     public function editMobil($id, $moid)
     {
         $mobil = Mobil::where('id', $moid)->first()->getOriginal();
-        $penjual = Penjual::find($id)->first()->getOriginal();
+        $penjual = Penjual::where('id',$id)->first()->getOriginal();
         $user = User::where('id', $penjual['user_id'])->first()->getOriginal();
         return view('Penjual.editMobil', compact('penjual', 'mobil', 'user'));
     }

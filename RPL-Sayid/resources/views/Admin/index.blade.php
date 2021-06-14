@@ -1,49 +1,100 @@
 @extends('Admin.master')
 
 @section('content')
-<table style="width:100%">
+
+<div class="row mt-3">
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="info-box">
+        <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-user"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Jumlah User</span>
+          <span class="info-box-number">
+            {{$countuser}}
+            <small></small>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box">
+          <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-car"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Jumlah Mobil</span>
+            <span class="info-box-number">
+              {{$countmobil}}
+              <small></small>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box">
+          <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-comment-dollar"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Jumlah Transaksi</span>
+            <span class="info-box-number">
+                {{$counttransaksi}}
+              <small></small>
+            </span>
+          </div>
+        </div>
+      </div>
+</div>
+
+@if(session('updateUser'))
+<div class="alert alert-success">
+    {{ session('updateUser')}}
+</div>
+@endif
+@if(session('deleteUser'))
+<div class="alert alert-success">
+    {{ session('deleteUser')}}
+</div>
+@endif
+<table class="mt-3"style="width:100%">
     <tr>
-        <th>no_ktp</th>
-        <th>username</th>
-        <th>password</th>
-        <th>email</th>
-        <th>no_hp</th>
-        <th>nama</th>
-        <th>jenis_kelamin</th>
-        <th>alamat</th>
-        <th>saldo</th>
-        <th>sebagai</th>
+        <th>No KTP</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Email</th>
+        <th>No HP</th>
+        <th>Nama</th>
+        <th>Jenis Kelamin</th>
+        <th>Alamat</th>
+        <th>Saldo</th>
+        <th>Sebagai</th>
     </tr>
     @foreach ($user as $u)
     <tr>
-        <th>{{$u->no_ktp}}</th>
-        <th>{{$u->username}}</th>
-        <th>{{$u->password}}</th>
-        <th>{{$u->email}}</th>
-        <th>{{$u->no_hp}}</th>
-        <th>{{$u->nama}}</th>
-        <th>{{$u->jenis_kelamin}}</th>
-        <th>{{$u->alamat}}</th>
-        <th>{{$u->saldo}}</th>
-        <th>
+        <td>{{$u->no_ktp}}</td>
+        <td>{{$u->username}}</td>
+        <td>{{$u->password}}</td>
+        <td>{{$u->email}}</td>
+        <td>{{$u->no_hp}}</td>
+        <td>{{$u->nama}}</td>
+        <td>{{$u->jenis_kelamin}}</td>
+        <td>{{$u->alamat}}</td>
+        <td>@currency($u['saldo'])</td>
+        <td>
             @if ($u->isPembeli === 0)
             Penjual
             @else
             Pembeli
             @endif
-        </th>
-        <th>
-            <form action="">
+        </td>
+        <td>
+            <form action="/editUser/{{$u->id}}">
                 <button class="btn btn-secondary">Edit</button>
             </form>
-            <form action="/deleteMobil" method="post">
+        </td>
+        <td>
+            <form action="/deleteUser/" method="post">
                 @csrf
-                <input type="hidden" name="penjual_id" id="penjual_id" value="">
-                <input type="hidden" name="mobil_id" id="mobil_id" value="">
+                <input type="hidden" name="id" id="id" value="{{$u['id']}}">
                 <button class="btn btn-danger">Delete</button>
             </form>
-        </th>
-    </tr>
+        </td>
+    </td>
     @endforeach
 </table>
 @endsection
