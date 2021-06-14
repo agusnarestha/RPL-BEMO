@@ -73,6 +73,10 @@
             <div class="alert alert-success">
                 {{ session('tarikSaldo')}}
             </div>
+            @elseif(session('gagalSaldo'))
+            <div class="alert alert-danger">
+                {{ session('gagalSaldo')}}
+            </div>
             @endif
         </div>
         <div class="nav-item">

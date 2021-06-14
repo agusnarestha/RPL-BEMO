@@ -173,13 +173,20 @@ class PembeliController extends Controller
 
     public function tarikSaldo(Request $request)
     {
-        $flight = User::find($request->id);
-        $flight->saldo = $flight->saldo - $request->saldo;
-        $flight->save();
         $pembeli = Pembeli::where('user_id', $request->id)->first()->getOriginal();
-        return redirect()->action(
-            [PembeliController::class, 'CookiesPembeli'],
-            ['id' => $pembeli['id']]
-        )->with('tarikSaldo', 'Saldo Berhasil Ditarik');
+        $flight = User::find($request->id);
+        if ($flight->saldo < $request->saldo) {
+            return redirect()->action(
+                [PembeliController::class, 'CookiesPembeli'],
+                ['id' => $pembeli['id']]
+            )->with('gagalSaldo', 'Saldo Kurang');
+        } else {
+            $flight->saldo = $flight->saldo - $request->saldo;
+            $flight->save();
+            return redirect()->action(
+                [PembeliController::class, 'CookiesPembeli'],
+                ['id' => $pembeli['id']]
+            )->with('tarikSaldo', 'Saldo Berhasil Ditarik');
+        }
     }
 }
