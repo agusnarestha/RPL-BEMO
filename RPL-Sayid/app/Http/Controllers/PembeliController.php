@@ -116,7 +116,7 @@ class PembeliController extends Controller
     {
         $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
         $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
-        $history = HistoryTransaksi::where('pembeli_id', $id)->get();
+        $history = HistoryTransaksi::join('penjual', 'historytransaksi.penjual_id', '=', 'penjual.id')->where('pembeli_id', $id)->get();
         $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
         return view('Pembeli.history', compact('user', 'pembeli', 'history', 'wishlist'));
     }

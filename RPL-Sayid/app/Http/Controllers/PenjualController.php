@@ -129,7 +129,7 @@ class PenjualController extends Controller
     {
         $penjual = Penjual::where('id', $id)->first()->getOriginal();
         $user = User::where('id', $penjual['user_id'])->first()->getOriginal();
-        $history = HistoryTransaksi::where('penjual_id', $id)->get();
+        $history = HistoryTransaksi::join('pembeli', 'historytransaksi.pembeli_id', '=', 'pembeli.id')->where('pembeli_id', $id)->get();
         return view('Penjual.history', compact('user', 'penjual', 'history'));
     }
 
