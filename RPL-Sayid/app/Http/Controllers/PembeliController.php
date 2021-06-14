@@ -162,4 +162,24 @@ class PembeliController extends Controller
         $mobil = Mobil::where('tipe_mobil', $tipe)->get();
         return view('Pembeli.list', compact('user', 'pembeli', 'mobil', 'wishlist'));
     }
+
+    public function tarik($id)
+    {
+        $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
+        $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
+        $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
+        return view('Pembeli.tarik', compact('user', 'pembeli', 'wishlist'));
+    }
+
+    public function tarikSaldo(Request $request)
+    {
+        $flight = User::find($request->id);
+        $flight->saldo = $flight->saldo - $request->saldo;
+        $flight->save();
+        $pembeli = Pembeli::where('user_id', $request->id)->first()->getOriginal();
+        return redirect()->action(
+            [PembeliController::class, 'CookiesPembeli'],
+            ['id' => $pembeli['id']]
+        )->with('tarikSaldo', 'Saldo Berhasil Ditarik');
+    }
 }

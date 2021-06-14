@@ -13,11 +13,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5">
-                        <span>Bag,kids</span>
-                        <h1>Black friday</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore</p>
-                        <a href="{{ url('/mobil/'.$pembeli['id']) }}" class="primary-btn">Shop Now</a>
+                        <span>SUV</span>
+                        <h1>Mercedes GLE</h1>
+                        <p>From the infamous S-Class to the powerful GLS, this brand has plenty of vehicles that gives luxury vehicle shoppers here in Peoria an excellent driving experience</p>
+                        <a href="{{ url('/mobil/'.$pembeli['id']) }}" class="primary-btn">Belanja Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -26,11 +25,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5">
-                        <span>Bag,kids</span>
-                        <h1>Black friday</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore</p>
-                        <a href="{{ url('/mobil/'.$pembeli['id']) }}" class="primary-btn">Shop Now</a>
+                        <span>Sedan</span>
+                        <h1>Hyundai Azera</h1>
+                        <p>“New Thinking, New Possibilities” is the current Hyundai Motor Company slogan, chosen to align with the name and the overall company mission</p>
+                        <a href="{{ url('/mobil/'.$pembeli['id']) }}" class="primary-btn">Belanja Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -46,7 +44,7 @@
             <div class="col-lg-3">
                 <div class="product-large set-bg" data-setbg="{{url('img/women-large1.jpg')}}">
                     <h2 style="background-color: rgba(0, 0, 0, 0.3);">SUV</h2>
-                    <a href="/mobil/{{$pembeli['id']}}/SUV">Discover More</a>
+                    <a href="/mobil/{{$pembeli['id']}}/SUV">Telusuri</a>
                 </div>
             </div>
             <div class="col-lg-8 offset-lg-1">
@@ -59,7 +57,7 @@
                                 <a href="{{ url('/wishlist/'.$pembeli['id'].'/'.$s->id) }}" style="color:black;"><i class="icon_heart_alt"></i></a>
                             </div>
                             <ul>
-                                <li class="quick-view"><a href="{{ url('/infomobil/'.$pembeli['id'].'/'.$s->id) }}">More</a></li>
+                                <li class="quick-view"><a href="{{ url('/infomobil/'.$pembeli['id'].'/'.$s->id) }}">Telusuri</a></li>
                             </ul>
                         </div>
                         <div class="pi-text">
@@ -86,7 +84,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="single-banner">
-                    <img src="{{url('img/banner-1.jpg')}}" alt="">
+                    <img src="{{url('img/banner-3.jpg')}}" alt="">
                     <div class="inner-text">
                         <a href="/mobil/{{$pembeli['id']}}/SUV">
                             <h4>SUV</h4>
@@ -106,7 +104,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="single-banner">
-                    <img src="{{url('img/banner-3.jpg')}}" alt="">
+                    <img src="{{url('img/banner-1.jpg')}}" alt="">
                     <div class="inner-text">
                         <a href="/mobil/{{$pembeli['id']}}/LCGC">
                             <h4>LCGC</h4>
@@ -133,7 +131,7 @@
                                 <a href="{{ url('/wishlist/'.$pembeli['id'].'/'.$s->id) }}" style="color:black;"><i class="icon_heart_alt"></i></a>
                             </div>
                             <ul>
-                                <li class="quick-view"><a href="{{ url('/infomobil/'.$pembeli['id'].'/'.$s->id) }}">More</a></li>
+                                <li class="quick-view"><a href="{{ url('/infomobil/'.$pembeli['id'].'/'.$s->id) }}">Telusuri</a></li>
                             </ul>
                         </div>
                         <div class="pi-text">
@@ -152,7 +150,7 @@
             <div class="col-lg-3 offset-lg-1">
                 <div class="product-large set-bg m-large" data-setbg="{{url('img/women-large2.jpg')}}">
                     <h2 style="background-color: rgba(0, 0, 0, 0.3);">Sedan</h2>
-                    <a href="/mobil/{{$pembeli['id']}}/Sedan">Discover More</a>
+                    <a href="/mobil/{{$pembeli['id']}}/Sedan">Telusuri</a>
                 </div>
             </div>
         </div>

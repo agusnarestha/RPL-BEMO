@@ -15,7 +15,7 @@ class CreatePenjualTable extends Migration
     {
         Schema::create('penjual', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('no_ktp');
+            $table->string('nama');
             $table->unsignedBigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
         });

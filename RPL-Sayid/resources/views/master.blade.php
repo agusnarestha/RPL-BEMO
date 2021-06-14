@@ -23,18 +23,25 @@
     <link rel="stylesheet" href="{{url('css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('css/style.css')}}" type="text/css">
 </head>
-@yield('content')
-<!-- Js Plugins -->
-<script src="{{url('js/jquery-3.3.1.min.js')}}"></script>
-<script src="{{url('js/bootstrap.min.js')}}"></script>
-<script src="{{url('js/jquery-ui.min.js')}}"></script>
-<script src="{{url('js/jquery.countdown.min.js')}}"></script>
-<script src="{{url('js/jquery.nice-select.min.js')}}"></script>
-<script src="{{url('js/jquery.zoom.min.js')}}"></script>
-<script src="{{url('js/jquery.dd.min.js')}}"></script>
-<script src="{{url('js/jquery.slicknav.js')}}"></script>
-<script src="{{url('js/owl.carousel.min.js')}}"></script>
-<script src="{{url('js/main.js')}}"></script>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    @yield('content')
+
+    <!-- Js Plugins -->
+    <script src="{{url('js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{url('js/bootstrap.min.js')}}"></script>
+    <script src="{{url('js/jquery-ui.min.js')}}"></script>
+    <script src="{{url('js/jquery.countdown.min.js')}}"></script>
+    <script src="{{url('js/jquery.nice-select.min.js')}}"></script>
+    <script src="{{url('js/jquery.zoom.min.js')}}"></script>
+    <script src="{{url('js/jquery.dd.min.js')}}"></script>
+    <script src="{{url('js/jquery.slicknav.js')}}"></script>
+    <script src="{{url('js/owl.carousel.min.js')}}"></script>
+    <script src="{{url('js/main.js')}}"></script>
 </body>
 
 </html>

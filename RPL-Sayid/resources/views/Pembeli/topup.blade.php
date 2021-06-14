@@ -8,19 +8,18 @@
             <div class="col-lg-6 offset-lg-3">
 
                 <div class="register-form">
-                    <h2>Top Up</h2>
+                    <h2>Isi Saldo</h2>
                     <h3>Saldo saat ini @currency($user['saldo'])</h3>
                     <br>
                     @if(session('kurangSaldo'))
-                        <div class="alert alert-danger">
-                            {{ session('kurangSaldo')}}
-                        </div>
+                    <div class="alert alert-danger">
+                        {{ session('kurangSaldo')}}
+                    </div>
                     @endif
                     <form action="/insertsaldo" method="post">
                         @csrf
                         <div class="form-group">
-                            <label for="saldo">saldo</label>
-                            <input type="text" class="form-control" name="saldo" id="saldo" placeholder="Masukkan saldo">
+                            <input type="text" class="form-control" name="saldo" id="saldo">
                             @error('saldo')
                             <div class="alert alert-danger">
                                 {{ $message }}

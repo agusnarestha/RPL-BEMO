@@ -10,7 +10,7 @@ class Penjual extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'penjual';
-    protected $fillable = ['no_ktp','user_id'];
+    protected $fillable = ['nama', 'user_id'];
 
     public function user()
     {
