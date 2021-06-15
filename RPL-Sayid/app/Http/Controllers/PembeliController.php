@@ -188,4 +188,14 @@ class PembeliController extends Controller
             )->with('tarikSaldo', 'Saldo Berhasil Ditarik');
         }
     }
+
+    public function cetakInvoice($id){
+
+        $history = HistoryTransaksi::where('id', $id)->first();
+        $pembeli = Pembeli::where('id', $history['pembeli_id'])->first()->getOriginal();
+        $penjual = Penjual::where('id', $history['penjual_id'])->first()->getOriginal();
+        $user1 = User::where('id', $pembeli['user_id'])->first()->getOriginal();
+        $user2 = User::where('id', $penjual['user_id'])->first()->getOriginal();
+        return view('Pembeli.cetakInvoice', compact('history','user2','user1'));
+    }
 }

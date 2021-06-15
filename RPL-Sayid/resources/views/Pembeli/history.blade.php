@@ -66,7 +66,12 @@
                                 <td class="cart-title first-row">
                                     <h5>{{$d->nama}}</h5>
                                 </td>
-                                <td class="total-price first-row">Rp.{{$d->harga}}</td>
+                                <td class="total-price first-row">@currency($d['harga'])</td>
+                                <td class="cart-title first-row">
+                                    <form action="/cetakInvoice/{{$d->id}}">
+                                        <button class="btn btn-secondary">Cetak</button>
+                                    </form>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
