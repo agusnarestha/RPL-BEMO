@@ -40,7 +40,7 @@ Route::get('/wishlist/{id}/{moid}', [PembeliController::class, 'addWishlist']);
 Route::get('/wish/{id}', [PembeliController::class, 'getWishlist']);
 Route::get('/delwish/{id}/{wid}', [PembeliController::class, 'delWishlist']);
 Route::get('/mobil/{id}/{tipe}', [PembeliController::class, 'filterCar']);
-Route::get('/cetakInvoice/{id}/', [PembeliController::class, 'cetakInvoice']);
+Route::get('/cetakInvoice/{id}/{hid}', [PembeliController::class, 'cetakInvoice']);
 
 Route::get('/inputMobil/{id}', [PenjualController::class, 'inputMobil']);
 Route::post('/insertMobil', [PenjualController::class, 'insertMobil']);

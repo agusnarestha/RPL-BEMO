@@ -189,13 +189,22 @@ class PembeliController extends Controller
         }
     }
 
-    public function cetakInvoice($id){
-
-        $history = HistoryTransaksi::where('id', $id)->first();
-        $pembeli = Pembeli::where('id', $history['pembeli_id'])->first()->getOriginal();
-        $penjual = Penjual::where('id', $history['penjual_id'])->first()->getOriginal();
+    public function cetakInvoice($id, $hid)
+    {
+        $history = HistoryTransaksi::join('penjual', 'historytransaksi.penjual_id', '=', 'penjual.id')->where('pembeli_id', $id)->get();
+        $history = $history->where('id', $hid)->first();
+        $pembeli = Pembeli::where('id', $history->pembeli_id)->first()->getOriginal();
+        $penjual = Penjual::where('id', $history->penjual_id)->first()->getOriginal();
         $user1 = User::where('id', $pembeli['user_id'])->first()->getOriginal();
         $user2 = User::where('id', $penjual['user_id'])->first()->getOriginal();
-        return view('Pembeli.cetakInvoice', compact('history','user2','user1'));
+        return view('Pembeli.cetakInvoice', compact('history', 'user2', 'user1'));
+    }
+
+    public function editProfil($id)
+    {
+        $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
+        $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
+        $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
+        return view();
     }
 }
