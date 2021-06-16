@@ -190,7 +190,7 @@ class PenjualController extends Controller
                 'username.unique' => 'Username Telah Digunakan !',
             ]
         );
-        $penjual = Penjual::where('id', $id)->first()->getOriginal();
+        $penjual = Penjual::where('id', $id)->first();
         $user = User::where('id', $penjual['user_id']);
         $user->update([
             'password' => $request->password,
@@ -200,6 +200,11 @@ class PenjualController extends Controller
             'jenis_kelamin' => $request->jenis_kelamin,
             'alamat' => $request->alamat,
         ]);
+
+        $penjual->update(
+            ['nama' => $request->nama
+        ]);
+
         return redirect()->action(
             [PenjualController::class, 'CookiesPenjual'],
             ['id' => $penjual['id']]

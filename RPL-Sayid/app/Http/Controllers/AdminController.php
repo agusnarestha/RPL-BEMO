@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Mobil;
 use App\Models\User;
+use App\Models\Penjual;
+use App\Models\Pembeli;
 use App\Models\HistoryTransaksi;
 use Illuminate\Http\Request;
 
@@ -37,7 +39,7 @@ class AdminController extends Controller
         return view('Admin.editUser', compact('user'));
     }
 
-    public function updateUser(Request $request)
+    public function updateUser(Request $request, $id)
     {
         $this->validate(
             $request,
@@ -59,7 +61,9 @@ class AdminController extends Controller
                 'username.unique' => 'Username Telah Digunakan !',
             ]
         );
-        $user = User::where('id', $request->id);
+        $user = User::where('id', $request->id) -> first();
+        $penjual = Penjual::where('user_id', $user->id)->first();
+        $pembeli = Pembeli::where('user_id', $user->id)->first();
         $user->update([
             'password' => $request->password,
             'email' => $request->email,
@@ -68,6 +72,14 @@ class AdminController extends Controller
             'jenis_kelamin' => $request->jenis_kelamin,
             'alamat' => $request->alamat,
         ]);
+        if ($user['isPembeli'] == FALSE ){
+            $penjual->update(
+                ['nama' => $request->nama]);
+        }else{
+            $pembeli->update(
+                ['nama' => $request->nama]);
+        }
+
         return redirect()->action(
             [AdminController::class, 'CookiesAdmin']
         )->with('updateUser', 'User Berhasil Diupdate');

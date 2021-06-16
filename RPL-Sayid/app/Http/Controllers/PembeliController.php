@@ -230,7 +230,7 @@ class PembeliController extends Controller
                 'username.unique' => 'Username Telah Digunakan !',
             ]
         );
-        $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
+        $pembeli = Pembeli::where('id', $id)->first();
         $user = User::where('id', $pembeli['user_id']);
         $user->update([
             'password' => $request->password,
@@ -240,6 +240,12 @@ class PembeliController extends Controller
             'jenis_kelamin' => $request->jenis_kelamin,
             'alamat' => $request->alamat,
         ]);
+
+        $pembeli->update(
+            ['nama' => $request->nama
+        ]);
+
+
         return redirect()->action(
             [PembeliController::class, 'CookiesPembeli'],
             ['id' => $pembeli['id']]
