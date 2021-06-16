@@ -205,6 +205,44 @@ class PembeliController extends Controller
         $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
         $user = User::where('id', $pembeli['user_id'])->first()->getOriginal();
         $wishlist = Wishlist::where('pembeli_id', $pembeli['id'])->get();
-        return view();
+        return view('Pembeli.editProfil',compact('user','pembeli','wishlist'));
+    }
+
+    public function updateProfil(Request $request, $id)
+    {
+        $this->validate(
+            $request,
+            [
+                'password' => 'required',
+                'email' => 'required',
+                'no_hp' => 'required',
+                'nama' => 'required',
+                'jenis_kelamin' => 'required',
+                'alamat' => 'required',
+            ],
+            [
+                'password.required' => 'Password Tidak Boleh Kosong !',
+                'email.required' => 'Email Tidak Boleh Kosong !',
+                'no_hp.required' => 'No Hp Bakar Tidak Boleh Kosong !',
+                'nama.required' => 'Nama Tidak Boleh Kosong !',
+                'jenis_kelamin.required' => 'Jenis Kelamin Tidak Boleh Kosong !',
+                'alamat.required' => 'Alamat Tidak Boleh Kosong !',
+                'username.unique' => 'Username Telah Digunakan !',
+            ]
+        );
+        $pembeli = Pembeli::where('id', $id)->first()->getOriginal();
+        $user = User::where('id', $pembeli['user_id']);
+        $user->update([
+            'password' => $request->password,
+            'email' => $request->email,
+            'no_hp' => $request->no_hp,
+            'nama' => $request->nama,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'alamat' => $request->alamat,
+        ]);
+        return redirect()->action(
+            [PembeliController::class, 'CookiesPembeli'],
+            ['id' => $pembeli['id']]
+        )->with('updateProfile', 'Profile Berhasil Diupdate');
     }
 }

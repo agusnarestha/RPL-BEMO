@@ -36,7 +36,7 @@
             <div class="container">
                 <div class="ht-right">
                     <a href="/" class="login-panel px-3 py-3"><i class="fa fa-user"></i>Keluar</a>
-                    <a href="#" class="login-panel px-3 py-3"><i class="fa fa-user"></i>{{$user['nama']}}</a>
+                    <a href="/editProfilPem/{{$pembeli['id']}}" class="login-panel px-3 py-3"><i class="fa fa-user"></i>{{$user['nama']}}</a>
                 </div>
             </div>
         </div>
@@ -82,6 +82,11 @@
             <div class="alert alert-success">
                 {{ session('beliMobil')}}
             </div>
+            @endif
+            @if(session('updateProfile'))
+                <div class="alert alert-success">
+                    {{ session('updateProfile')}}
+                </div>
             @endif
         </div>
         <div class="nav-item">

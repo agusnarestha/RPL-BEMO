@@ -41,6 +41,8 @@ Route::get('/wish/{id}', [PembeliController::class, 'getWishlist']);
 Route::get('/delwish/{id}/{wid}', [PembeliController::class, 'delWishlist']);
 Route::get('/mobil/{id}/{tipe}', [PembeliController::class, 'filterCar']);
 Route::get('/cetakInvoice/{id}/{hid}', [PembeliController::class, 'cetakInvoice']);
+Route::get('/editProfilPem/{id}/', [PembeliController::class, 'editProfil']);
+Route::post('/updateProfilPem/{id}', [PembeliController::class, 'updateProfil']);
 
 Route::get('/inputMobil/{id}', [PenjualController::class, 'inputMobil']);
 Route::post('/insertMobil', [PenjualController::class, 'insertMobil']);
@@ -50,6 +52,8 @@ Route::post('/updateMobil', [PenjualController::class, 'updateMobil']);
 Route::get('/historyPenjual/{id}', [PenjualController::class, 'getHistory']);
 Route::get('/tarikPenjual/{id}', [PenjualController::class, 'tarik']);
 Route::post('/tariksaldoPenjual', [PenjualController::class, 'tarikSaldo']);
+Route::get('/editProfilPen/{id}/', [PenjualController::class, 'editProfil']);
+Route::post('/updateProfilPen/{id}', [PenjualController::class, 'updateProfil']);
 
 Route::get('/mobil', [AdminController::class, 'getMobil']);
 Route::get('/history', [AdminController::class, 'getHistory']);

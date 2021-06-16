@@ -160,4 +160,49 @@ class PenjualController extends Controller
             )->with('tarikSaldo', 'Saldo Berhasil Ditarik');
         }
     }
+
+    public function editProfil($id)
+    {
+        $penjual = Penjual::where('id', $id)->first()->getOriginal();
+        $user = User::where('id', $penjual['user_id'])->first()->getOriginal();
+        return view('Penjual.editProfil',compact('user','penjual'));
+    }
+
+    public function updateProfil(Request $request, $id)
+    {
+        $this->validate(
+            $request,
+            [
+                'password' => 'required',
+                'email' => 'required',
+                'no_hp' => 'required',
+                'nama' => 'required',
+                'jenis_kelamin' => 'required',
+                'alamat' => 'required',
+            ],
+            [
+                'password.required' => 'Password Tidak Boleh Kosong !',
+                'email.required' => 'Email Tidak Boleh Kosong !',
+                'no_hp.required' => 'No Hp Bakar Tidak Boleh Kosong !',
+                'nama.required' => 'Nama Tidak Boleh Kosong !',
+                'jenis_kelamin.required' => 'Jenis Kelamin Tidak Boleh Kosong !',
+                'alamat.required' => 'Alamat Tidak Boleh Kosong !',
+                'username.unique' => 'Username Telah Digunakan !',
+            ]
+        );
+        $penjual = Penjual::where('id', $id)->first()->getOriginal();
+        $user = User::where('id', $penjual['user_id']);
+        $user->update([
+            'password' => $request->password,
+            'email' => $request->email,
+            'no_hp' => $request->no_hp,
+            'nama' => $request->nama,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'alamat' => $request->alamat,
+        ]);
+        return redirect()->action(
+            [PenjualController::class, 'CookiesPenjual'],
+            ['id' => $penjual['id']]
+        )->with('updateProfile', 'Profile Berhasil Diupdate');
+    }
 }

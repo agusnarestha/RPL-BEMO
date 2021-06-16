@@ -1,9 +1,9 @@
-@extends('Pembeli.master')
+@extends('Penjual.master')
 
 @section('content')
 <div class="container mt-3">
     <h3> Edit Profil </h3>
-    <form action="/updateProfilPem/{{$pembeli['id']}}" method="POST" enctype="multipart/form-data">
+    <form action="/updateProfilPen/{{$penjual['id']}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group mt-3">
             <label for="no_ktp">No KTP</label>
